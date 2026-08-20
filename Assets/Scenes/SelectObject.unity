@@ -708,15 +708,15 @@ MonoBehaviour:
   primaryIndexTrigger: 1
   secondaryIndexTrigger: 1
   shrinkDuration: 0.25
-  completionDelay: 0
+  selectionDelay: 0
   disableObject: 1
-  destroyObject: 0
-  disableDestroyDelay: 0
-  completionSound: {fileID: 0}
+  destroyObject: 1
+  disableDestroyDelay: 3
+  selectionSound: {fileID: 0}
   audioSource: {fileID: 0}
   soundVolume: 1
   points: 1
-  onComplete:
+  onSelected:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
