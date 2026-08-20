@@ -2,21 +2,22 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class VRInteractableComplete : MonoBehaviour
+public class SelectObject : MonoBehaviour
 {
-    public enum CompletionState
+    public enum SelectionState
     {
         Available,
-        Completing,
-        Complete,
+        Selecting,
+        Selected,
         Disabled
     }
 
     [Header("Hover / Pointing")]
-    [Tooltip("Controller transform used for the VR pointing ray.")]
+
+    [Tooltip("Controller transform used for the primary VR pointing ray.")]
     public Transform primaryPointer;
 
-    [Tooltip("Optional second controller transform used for the VR pointing ray.")]
+    [Tooltip("Controller transform used for the secondary VR pointing ray.")]
     public Transform secondaryPointer;
 
     [Tooltip("Maximum distance the VR pointer can detect this object.")]
@@ -25,114 +26,138 @@ public class VRInteractableComplete : MonoBehaviour
     [Tooltip("Which layers can be detected by the VR pointer.")]
     public LayerMask pointerLayers = ~0;
 
-    [Tooltip("If enabled, the object can also be activated with the PC mouse.")]
+    [Tooltip("Allow this object to be selected using PC mouse controls.")]
     public bool enablePCControls = true;
 
-    [Header("Quest 3 Controls")]
-    [Tooltip("Primary Index Trigger = right controller trigger.")]
+
+    [Header("Quest Controls")]
+
+    [Tooltip("Allow the Primary Index Trigger to select this object.")]
     public bool primaryIndexTrigger = true;
 
-    [Tooltip("Secondary Index Trigger = left controller trigger.")]
+    [Tooltip("Allow the Secondary Index Trigger to select this object.")]
     public bool secondaryIndexTrigger = true;
 
-    [Header("Completion Animation")]
+
+    [Header("Selection Animation")]
+
     [Tooltip("How long it takes for the object to shrink to zero.")]
     public float shrinkDuration = 0.5f;
 
-    [Tooltip("Optional delay after the shrinking animation has finished.")]
-    public float completionDelay = 0f;
+    [Tooltip("Optional delay after the shrink animation has finished.")]
+    public float selectionDelay = 0f;
 
-    [Header("After Completion")]
-    [Tooltip("Disable the GameObject after completion.")]
+
+    [Header("After Selection")]
+
+    [Tooltip("Disable this object after it has been selected.")]
     public bool disableObject = true;
 
-    [Tooltip("Destroy the GameObject after completion. Overrides disabling.")]
+    [Tooltip("Destroy this object after it has been selected. This overrides Disable Object.")]
     public bool destroyObject = false;
 
-    [Tooltip("Delay before disabling/destroying the object.")]
+    [Tooltip("Delay before disabling or destroying the object.")]
     public float disableDestroyDelay = 0f;
 
-    [Header("Sound")]
-    [Tooltip("Sound played when the object is completed.")]
-    public AudioClip completionSound;
 
-    [Tooltip("Audio source used to play the completion sound.")]
+    [Header("Selection Sound")]
+
+    [Tooltip("Sound played when this object is selected.")]
+    public AudioClip selectionSound;
+
+    [Tooltip("Audio Source used to play the selection sound.")]
     public AudioSource audioSource;
 
-    [Tooltip("Volume of the completion sound.")]
     [Range(0f, 1f)]
+    [Tooltip("Volume of the selection sound.")]
     public float soundVolume = 1f;
 
-    [Header("Points / Completion Information")]
-    [Tooltip("Optional number of points associated with this object.")]
+
+    [Header("Selection Information")]
+
+    [Tooltip("Optional point value associated with this object.")]
     public int points = 1;
 
-    [Tooltip("Called when the object is successfully completed.")]
-    public UnityEvent onComplete;
 
-    [Tooltip("Called when the object becomes disabled.")]
+    [Header("Events")]
+
+    [Tooltip("Called immediately when this object is selected.")]
+    public UnityEvent onSelected;
+
+    [Tooltip("Called when this object is disabled.")]
     public UnityEvent onDisabled;
 
-    [Tooltip("Sends the point value to another script.")]
+    [Tooltip("Sends the point value to another script when selected.")]
     public UnityEvent<int> onPointsAwarded;
 
+
     [Header("Debug")]
+
     [SerializeField]
-    private CompletionState currentState = CompletionState.Available;
+    private SelectionState currentState = SelectionState.Available;
+
 
     private Vector3 originalScale;
+
     private bool isHovered = false;
-    private bool hasBeenCompleted = false;
+    private bool hasBeenSelected = false;
+
 
     /// <summary>
-    /// Current state of this object.
+    /// Returns the current selection state of this object.
     /// </summary>
-    public CompletionState CurrentState
+    public SelectionState CurrentState
     {
         get { return currentState; }
     }
 
-    /// <summary>
-    /// Returns true once the object has been completed.
-    /// </summary>
-    public bool IsComplete
-    {
-        get { return currentState == CompletionState.Complete || currentState == CompletionState.Disabled; }
-    }
 
     /// <summary>
-    /// Returns true once the object has been disabled.
+    /// Returns true once this object has been selected.
+    /// </summary>
+    public bool IsSelected
+    {
+        get
+        {
+            return currentState == SelectionState.Selected ||
+                   currentState == SelectionState.Disabled;
+        }
+    }
+
+
+    /// <summary>
+    /// Returns true once this object has been disabled.
     /// </summary>
     public bool IsDisabled
     {
-        get { return currentState == CompletionState.Disabled; }
+        get
+        {
+            return currentState == SelectionState.Disabled;
+        }
     }
 
+
     /// <summary>
-    /// Returns whether the player is currently pointing at the object.
+    /// Returns true while the player is pointing at this object.
     /// </summary>
     public bool IsHovered
     {
         get { return isHovered; }
     }
 
+
     private void Start()
     {
         originalScale = transform.localScale;
-
-        // Automatically find the main camera for PC controls.
-        if (enablePCControls && Camera.main != null)
-        {
-            // Nothing required here.
-        }
     }
+
 
     private void Update()
     {
-        if (hasBeenCompleted)
+        if (hasBeenSelected)
             return;
 
-        CheckVRHover();
+        CheckHover();
 
         if (isHovered)
         {
@@ -141,15 +166,17 @@ public class VRInteractableComplete : MonoBehaviour
         }
     }
 
-    // ---------------------------------------------------------
-    // VR HOVER / POINTING
-    // ---------------------------------------------------------
 
-    private void CheckVRHover()
+    // =========================================================
+    // HOVER / POINTING
+    // =========================================================
+
+    private void CheckHover()
     {
         isHovered = false;
 
-        // Check primary controller pointer.
+
+        // Check primary pointer.
         if (primaryPointer != null)
         {
             if (PointerHitsObject(primaryPointer))
@@ -159,7 +186,8 @@ public class VRInteractableComplete : MonoBehaviour
             }
         }
 
-        // Check secondary controller pointer.
+
+        // Check secondary pointer.
         if (secondaryPointer != null)
         {
             if (PointerHitsObject(secondaryPointer))
@@ -169,6 +197,7 @@ public class VRInteractableComplete : MonoBehaviour
             }
         }
     }
+
 
     private bool PointerHitsObject(Transform pointer)
     {
@@ -183,7 +212,8 @@ public class VRInteractableComplete : MonoBehaviour
             pointerLayers,
             QueryTriggerInteraction.Collide))
         {
-            // Check if the ray hit this object or one of its children.
+            // Check whether the pointer hit this object
+            // or one of its child objects.
             if (hit.transform == transform ||
                 hit.transform.IsChildOf(transform))
             {
@@ -194,16 +224,19 @@ public class VRInteractableComplete : MonoBehaviour
         return false;
     }
 
-    // ---------------------------------------------------------
-    // QUEST 3 INPUT
-    // ---------------------------------------------------------
+
+    // =========================================================
+    // QUEST INPUT
+    // =========================================================
 
     private void CheckQuestInput()
     {
         bool primaryPressed = false;
         bool secondaryPressed = false;
 
+
 #if UNITY_ANDROID || UNITY_EDITOR
+
         if (primaryIndexTrigger)
         {
             primaryPressed = OVRInput.GetDown(
@@ -211,75 +244,93 @@ public class VRInteractableComplete : MonoBehaviour
             );
         }
 
+
         if (secondaryIndexTrigger)
         {
             secondaryPressed = OVRInput.GetDown(
                 OVRInput.Button.SecondaryIndexTrigger
             );
         }
+
 #endif
+
 
         if (primaryPressed || secondaryPressed)
         {
-            CompleteObject();
+            Select();
         }
     }
 
-    // ---------------------------------------------------------
+
+    // =========================================================
     // PC INPUT
-    // ---------------------------------------------------------
+    // =========================================================
 
     private void CheckPCInput()
     {
         if (!enablePCControls)
             return;
 
+
+        // Left Mouse Button.
         if (Input.GetMouseButtonDown(0))
         {
-            CompleteObject();
+            Select();
         }
     }
 
-    // ---------------------------------------------------------
-    // COMPLETION
-    // ---------------------------------------------------------
 
-    public void CompleteObject()
+    // =========================================================
+    // SELECT OBJECT
+    // =========================================================
+
+    /// <summary>
+    /// Selects this object.
+    /// </summary>
+    public void Select()
     {
-        if (hasBeenCompleted)
+        if (hasBeenSelected)
             return;
 
-        hasBeenCompleted = true;
-        currentState = CompletionState.Completing;
 
-        // Play sound immediately when activated.
-        PlayCompletionSound();
+        hasBeenSelected = true;
 
-        // Notify other scripts immediately.
-        if (onComplete != null)
+        currentState = SelectionState.Selecting;
+
+
+        // Play the selection sound.
+        PlaySelectionSound();
+
+
+        // Notify other scripts that this object was selected.
+        if (onSelected != null)
         {
-            onComplete.Invoke();
+            onSelected.Invoke();
         }
 
-        // Award points / send information to another script.
+
+        // Send the point value to another script.
         if (onPointsAwarded != null)
         {
             onPointsAwarded.Invoke(points);
         }
 
-        StartCoroutine(CompleteAnimation());
+
+        StartCoroutine(SelectionAnimation());
     }
 
-    // ---------------------------------------------------------
-    // SHRINK ANIMATION
-    // ---------------------------------------------------------
 
-    private IEnumerator CompleteAnimation()
+    // =========================================================
+    // SELECTION ANIMATION
+    // =========================================================
+
+    private IEnumerator SelectionAnimation()
     {
         Vector3 startScale = transform.localScale;
         Vector3 targetScale = Vector3.zero;
 
         float elapsed = 0f;
+
 
         if (shrinkDuration <= 0f)
         {
@@ -295,6 +346,7 @@ public class VRInteractableComplete : MonoBehaviour
                     elapsed / shrinkDuration
                 );
 
+
                 transform.localScale = Vector3.Lerp(
                     startScale,
                     targetScale,
@@ -307,19 +359,26 @@ public class VRInteractableComplete : MonoBehaviour
             transform.localScale = targetScale;
         }
 
-        currentState = CompletionState.Complete;
 
-        // Optional delay after the shrinking animation.
-        if (completionDelay > 0f)
+        // The object has now been successfully selected.
+        currentState = SelectionState.Selected;
+
+
+        // Optional delay after shrinking.
+        if (selectionDelay > 0f)
         {
-            yield return new WaitForSeconds(completionDelay);
+            yield return new WaitForSeconds(selectionDelay);
         }
 
-        // Additional delay before disabling/destroying.
+
+        // Optional delay before disabling/destroying.
         if (disableDestroyDelay > 0f)
         {
-            yield return new WaitForSeconds(disableDestroyDelay);
+            yield return new WaitForSeconds(
+                disableDestroyDelay
+            );
         }
+
 
         // Destroy takes priority over disabling.
         if (destroyObject)
@@ -328,65 +387,73 @@ public class VRInteractableComplete : MonoBehaviour
             yield break;
         }
 
+
         if (disableObject)
         {
             DisableObject();
         }
     }
 
-    // ---------------------------------------------------------
-    // DISABLE
-    // ---------------------------------------------------------
+
+    // =========================================================
+    // DISABLE OBJECT
+    // =========================================================
 
     private void DisableObject()
     {
-        currentState = CompletionState.Disabled;
+        currentState = SelectionState.Disabled;
+
 
         if (onDisabled != null)
         {
             onDisabled.Invoke();
         }
 
+
         gameObject.SetActive(false);
     }
 
-    // ---------------------------------------------------------
-    // SOUND
-    // ---------------------------------------------------------
 
-    private void PlayCompletionSound()
+    // =========================================================
+    // SOUND
+    // =========================================================
+
+    private void PlaySelectionSound()
     {
-        if (completionSound == null)
+        if (selectionSound == null)
             return;
+
 
         if (audioSource != null)
         {
             audioSource.PlayOneShot(
-                completionSound,
+                selectionSound,
                 soundVolume
             );
         }
         else
         {
             AudioSource.PlayClipAtPoint(
-                completionSound,
+                selectionSound,
                 transform.position,
                 soundVolume
             );
         }
     }
 
-    // ---------------------------------------------------------
-    // MANUAL CONTROL
-    // ---------------------------------------------------------
+
+    // =========================================================
+    // MANUAL SELECTION
+    // =========================================================
 
     /// <summary>
-    /// Allows another script to manually complete this object.
+    /// Allows another script to select this object.
     /// </summary>
-    public void ForceComplete()
+    public void ForceSelect()
     {
-        CompleteObject();
+        Select();
     }
+
 
     /// <summary>
     /// Returns the original scale of the object.
@@ -395,6 +462,7 @@ public class VRInteractableComplete : MonoBehaviour
     {
         return originalScale;
     }
+
 
     /// <summary>
     /// Resets the object back to its original state.
@@ -405,8 +473,9 @@ public class VRInteractableComplete : MonoBehaviour
 
         transform.localScale = originalScale;
 
-        currentState = CompletionState.Available;
-        hasBeenCompleted = false;
+        currentState = SelectionState.Available;
+
+        hasBeenSelected = false;
         isHovered = false;
 
         gameObject.SetActive(true);
