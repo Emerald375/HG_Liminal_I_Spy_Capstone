@@ -47,6 +47,12 @@ public class SelectObject : MonoBehaviour
     [Tooltip("Optional delay after the shrink animation has finished.")]
     public float selectionDelay = 0f;
 
+    [Tooltip("Caps the delta time used per animation frame. Protects the shrink " +
+             "animation from visually 'snapping' to zero if a frame hitch (e.g. " +
+             "audio load, GC, shader compile) occurs on device right as the " +
+             "object is selected. 0.05 = never treat a frame as longer than 50ms.")]
+    public float maxAnimationDeltaTime = 0.05f;
+
 
     [Header("After Selection")]
 
@@ -65,7 +71,13 @@ public class SelectObject : MonoBehaviour
     [Tooltip("Sound played when this object is selected.")]
     public AudioClip selectionSound;
 
-    [Tooltip("Audio Source used to play the selection sound.")]
+    [Tooltip("Audio Source used to play the selection sound. " +
+             "STRONGLY recommended to assign this on Quest builds — if left " +
+             "empty, PlayClipAtPoint() will be used instead, which allocates a " +
+             "brand-new temporary GameObject/AudioSource every call. That " +
+             "allocation can cause a frame hitch on mobile hardware at the exact " +
+             "moment the shrink animation starts, making it look like the " +
+             "animation isn't playing at all.")]
     public AudioSource audioSource;
 
     [Range(0f, 1f)]
@@ -95,6 +107,10 @@ public class SelectObject : MonoBehaviour
 
     [SerializeField]
     private SelectionState currentState = SelectionState.Available;
+
+    [Tooltip("Logs hover/select/animation events to the console. Useful for " +
+             "diagnosing behavior differences on-device via 'adb logcat'.")]
+    public bool debugLogging = false;
 
 
     private Vector3 originalScale;
@@ -149,6 +165,17 @@ public class SelectObject : MonoBehaviour
     private void Start()
     {
         originalScale = transform.localScale;
+
+        if (debugLogging && selectionSound != null && audioSource == null)
+        {
+            Debug.LogWarning(
+                "[SelectObject] '" + name + "' has a selectionSound but no " +
+                "AudioSource assigned. It will fall back to " +
+                "AudioSource.PlayClipAtPoint(), which can cause a frame hitch " +
+                "on Quest and make the shrink animation appear to snap " +
+                "instantly instead of animating smoothly. Assign an AudioSource " +
+                "to fix this.");
+        }
     }
 
 
@@ -173,6 +200,8 @@ public class SelectObject : MonoBehaviour
 
     private void CheckHover()
     {
+        bool wasHovered = isHovered;
+
         isHovered = false;
 
 
@@ -182,19 +211,22 @@ public class SelectObject : MonoBehaviour
             if (PointerHitsObject(primaryPointer))
             {
                 isHovered = true;
-                return;
             }
         }
 
 
         // Check secondary pointer.
-        if (secondaryPointer != null)
+        if (!isHovered && secondaryPointer != null)
         {
             if (PointerHitsObject(secondaryPointer))
             {
                 isHovered = true;
-                return;
             }
+        }
+
+        if (debugLogging && isHovered != wasHovered)
+        {
+            Debug.Log("[SelectObject] '" + name + "' hover = " + isHovered);
         }
     }
 
@@ -257,6 +289,12 @@ public class SelectObject : MonoBehaviour
 
         if (primaryPressed || secondaryPressed)
         {
+            if (debugLogging)
+            {
+                Debug.Log("[SelectObject] '" + name + "' Quest trigger detected. " +
+                          "primary=" + primaryPressed + " secondary=" + secondaryPressed);
+            }
+
             Select();
         }
     }
@@ -296,6 +334,11 @@ public class SelectObject : MonoBehaviour
         hasBeenSelected = true;
 
         currentState = SelectionState.Selecting;
+
+        if (debugLogging)
+        {
+            Debug.Log("[SelectObject] '" + name + "' Select() called. Starting shrink animation.");
+        }
 
 
         // Play the selection sound.
@@ -340,7 +383,20 @@ public class SelectObject : MonoBehaviour
         {
             while (elapsed < shrinkDuration)
             {
-                elapsed += Time.deltaTime;
+                // Clamp the per-frame delta time so a hitch (audio load, GC,
+                // shader compilation, etc.) right after Select() doesn't cause
+                // the object to visually jump straight from full size to zero
+                // in a single frame. This is the most common reason a shrink
+                // animation "works in Editor but not on Quest" - the animation
+                // IS running, it's just compressed into one frame by a hitch.
+                float frameDelta = Time.deltaTime;
+
+                if (maxAnimationDeltaTime > 0f)
+                {
+                    frameDelta = Mathf.Min(frameDelta, maxAnimationDeltaTime);
+                }
+
+                elapsed += frameDelta;
 
                 float percentage = Mathf.Clamp01(
                     elapsed / shrinkDuration
@@ -357,6 +413,11 @@ public class SelectObject : MonoBehaviour
             }
 
             transform.localScale = targetScale;
+        }
+
+        if (debugLogging)
+        {
+            Debug.Log("[SelectObject] '" + name + "' shrink animation finished.");
         }
 
 
@@ -433,6 +494,9 @@ public class SelectObject : MonoBehaviour
         }
         else
         {
+            // NOTE: this allocates a temporary GameObject + AudioSource every
+            // call, which can cause a frame hitch on Quest. Assign the
+            // audioSource field above to avoid this path.
             AudioSource.PlayClipAtPoint(
                 selectionSound,
                 transform.position,
