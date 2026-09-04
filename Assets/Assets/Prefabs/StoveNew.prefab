@@ -522,7 +522,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 4526009605435098059, guid: 6a880e09fb34f7842aac2fe2766958ae, type: 3}
+  - {fileID: 2100000, guid: 5e927543aed8fb2488b1e81d73f772ea, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -552,7 +552,7 @@ GameObject:
   m_Component:
   - component: {fileID: 887561968138352623}
   m_Layer: 0
-  m_Name: StoveNew 1
+  m_Name: StoveNew
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -634,7 +634,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -4079673392891438589, guid: 6a880e09fb34f7842aac2fe2766958ae, type: 3}
+  - {fileID: 2100000, guid: 5e927543aed8fb2488b1e81d73f772ea, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -843,7 +843,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6763428602381393645, guid: 6a880e09fb34f7842aac2fe2766958ae, type: 3}
+  - {fileID: 2100000, guid: 5e927543aed8fb2488b1e81d73f772ea, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
