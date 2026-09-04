@@ -20049,7 +20049,7 @@ GameObject:
   - component: {fileID: 1040811652}
   - component: {fileID: 1040811651}
   m_Layer: 0
-  m_Name: ChickenTimer
+  m_Name: CookingTimer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
