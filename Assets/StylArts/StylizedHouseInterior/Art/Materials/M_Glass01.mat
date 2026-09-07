@@ -28,27 +28,20 @@ MonoBehaviour:
   version: 5
 --- !u!21 &2100000
 Material:
-  serializedVersion: 8
+  serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Glass01
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ValidKeywords:
-  - _ALPHAPREMULTIPLY_ON
-  m_InvalidKeywords:
-  - _DISABLE_SSR_TRANSPARENT
-  - _ENABLE_FOG_ON_TRANSPARENT
-  - _REFRACTION_SPHERE
-  - _SURFACE_TYPE_TRANSPARENT
+  m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
+  m_CustomRenderQueue: -1
   stringTagMap:
     MotionVector: User
-    RenderType: Transparent
   disabledShaderPasses:
   - MOTIONVECTORS
   - TransparentDepthPrepass
@@ -110,7 +103,6 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    m_Ints: []
     m_Floats:
     - Vector1_01e874f3d25648ecb33ccd7ce327b48a: 0.4
     - Vector1_1981a28ffa024c7dbafabc86c73aa805: 0.3
@@ -134,14 +126,14 @@ Material:
     - _DetailNormalMapScale: 1
     - _DoubleSidedEnable: 0
     - _DoubleSidedNormalMode: 2
-    - _DstBlend: 10
+    - _DstBlend: 0
     - _EnableBlendModePreserveSpecularLighting: 0
     - _EnableFogOnTransparent: 1
     - _GlossMapScale: 1
     - _Glossiness: 0.856
     - _GlossyReflections: 1
     - _Metallic: 0.272
-    - _Mode: 3
+    - _Mode: 0
     - _OcclusionStrength: 1
     - _OpaqueCullMode: 2
     - _Parallax: 0.02
@@ -180,14 +172,14 @@ Material:
     - _ZTestDepthEqualForOpaque: 4
     - _ZTestGBuffer: 4
     - _ZTestTransparent: 4
-    - _ZWrite: 0
+    - _ZWrite: 1
     m_Colors:
     - Color_1: {r: 0.4039216, g: 0.47058827, b: 0.5058824, a: 0}
-    - Color_7150eba2bc994aa89f0bd02210a02acf: {r: 0.4039216, g: 0.47058827, b: 0.5058824, a: 0}
-    - _Color: {r: 0, g: 0.5172415, b: 1, a: 0}
+    - Color_7150eba2bc994aa89f0bd02210a02acf: {r: 0.4039216, g: 0.47058827, b: 0.5058824,
+        a: 0}
+    - _Color: {r: 0.7830189, g: 0.7830189, b: 0.7830189, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
 --- !u!114 &5910450374456638202
 MonoBehaviour:
   m_ObjectHideFlags: 11
