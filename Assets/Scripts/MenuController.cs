@@ -4,6 +4,8 @@ public class MenuController : MonoBehaviour
 {
 
     [SerializeField] private GameObject MainMenu;
+    [SerializeField] private TimerManager timerManager;
+
     private void Start()
     {
         Cursor.visible = true;
@@ -18,5 +20,7 @@ public class MenuController : MonoBehaviour
     public void StartGame()
     {
         MainMenu.SetActive(false);
+        timerManager.StartCountdown();
     }
+
 }
