@@ -55,7 +55,20 @@ public class HighlightObject : MonoBehaviour
             if (hit.collider.gameObject == gameObject)
             {
                 HandleHover();
+
+                // teleport testing - gurf
+                if(Input.GetKeyDown(KeyCode.G))
+                {
+                    TeleportPoint teleportPoint = GetComponent<TeleportPoint>();
+                
+                    if(teleportPoint != null)
+                    {
+                        teleportPoint.Teleport();
+                    }
+                }
             }
+
+            
         }
         else
         {
