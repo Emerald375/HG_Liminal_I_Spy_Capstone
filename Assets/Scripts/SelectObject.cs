@@ -351,7 +351,6 @@ public class SelectObject : MonoBehaviour
             onSelected.Invoke();
         }
 
-
         // Send the point value to another script.
         if (onPointsAwarded != null)
         {

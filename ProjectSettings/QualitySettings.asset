@@ -230,7 +230,7 @@ QualitySettings:
     - Android
   - serializedVersion: 2
     name: Mobile
-    pixelLightCount: 1
+    pixelLightCount: 10
     shadows: 0
     shadowResolution: 0
     shadowProjection: 1
