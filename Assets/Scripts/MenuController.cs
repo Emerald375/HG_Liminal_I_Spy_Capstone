@@ -11,11 +11,24 @@ public class MenuController : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
-    public void ExitGame()
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            StartGame();
+            timerManager.StartTimer();
+        }
+        /*if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            ExitGame();
+        }*/
+    }
+    /*public void ExitGame()
     {
         Debug.Log("game exiting");
         Application.Quit();
-    }
+    }*/
 
     public void StartGame()
     {

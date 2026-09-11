@@ -17,7 +17,7 @@ public class TimerManager : MonoBehaviour
     void Start()
     {
         timerText.gameObject.SetActive(false);
-        StartCountdown();
+        //StartCountdown();
     }
 
 
