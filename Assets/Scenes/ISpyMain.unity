@@ -5496,7 +5496,7 @@ PrefabInstance:
     - target: {fileID: 8727609580199192062, guid: 02b75409706eab14f8bca00475954fc5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.55
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8727609580199192062, guid: 02b75409706eab14f8bca00475954fc5,
         type: 3}
@@ -5541,6 +5541,16 @@ PrefabInstance:
     - target: {fileID: 8727609580199192062, guid: 02b75409706eab14f8bca00475954fc5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8727609580798938475, guid: 02b75409706eab14f8bca00475954fc5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8727609581121092972, guid: 02b75409706eab14f8bca00475954fc5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -6315,7 +6325,7 @@ PrefabInstance:
     - target: {fileID: 8727609580199192062, guid: 02b75409706eab14f8bca00475954fc5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.55
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8727609580199192062, guid: 02b75409706eab14f8bca00475954fc5,
         type: 3}
@@ -6360,6 +6370,16 @@ PrefabInstance:
     - target: {fileID: 8727609580199192062, guid: 02b75409706eab14f8bca00475954fc5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8727609580798938475, guid: 02b75409706eab14f8bca00475954fc5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8727609581121092972, guid: 02b75409706eab14f8bca00475954fc5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -6530,7 +6550,7 @@ PrefabInstance:
         type: 3}
       propertyPath: secondaryPointer
       value: 
-      objectReference: {fileID: 1260162969032316290}
+      objectReference: {fileID: 0}
     - target: {fileID: 6650332197869379969, guid: 6289bacec76100f45835900167504dd4,
         type: 3}
       propertyPath: controllerTransform
@@ -6545,7 +6565,7 @@ PrefabInstance:
         type: 3}
       propertyPath: secondaryPointer
       value: 
-      objectReference: {fileID: 1260162969032316290}
+      objectReference: {fileID: 0}
     - target: {fileID: 2455004744509343889, guid: 6289bacec76100f45835900167504dd4,
         type: 3}
       propertyPath: controllerTransform
@@ -8114,7 +8134,7 @@ PrefabInstance:
         type: 3}
       propertyPath: secondaryPointer
       value: 
-      objectReference: {fileID: 1260162969032316290}
+      objectReference: {fileID: 0}
     - target: {fileID: 4988529999259701465, guid: 78c1980edabf6dd4bb75e7cc9653c08c,
         type: 3}
       propertyPath: m_Size.x
@@ -8139,7 +8159,7 @@ PrefabInstance:
         type: 3}
       propertyPath: secondaryPointer
       value: 
-      objectReference: {fileID: 1260162969032316290}
+      objectReference: {fileID: 0}
     - target: {fileID: 4879484386474878255, guid: 78c1980edabf6dd4bb75e7cc9653c08c,
         type: 3}
       propertyPath: m_Size.x
@@ -8164,7 +8184,7 @@ PrefabInstance:
         type: 3}
       propertyPath: secondaryPointer
       value: 
-      objectReference: {fileID: 1260162969032316290}
+      objectReference: {fileID: 0}
     - target: {fileID: 2389514456042305831, guid: 78c1980edabf6dd4bb75e7cc9653c08c,
         type: 3}
       propertyPath: m_Size.x
@@ -8189,7 +8209,7 @@ PrefabInstance:
         type: 3}
       propertyPath: secondaryPointer
       value: 
-      objectReference: {fileID: 1260162969032316290}
+      objectReference: {fileID: 0}
     - target: {fileID: 2206336576880790156, guid: 78c1980edabf6dd4bb75e7cc9653c08c,
         type: 3}
       propertyPath: openRotation.y
@@ -23705,7 +23725,7 @@ PrefabInstance:
         type: 3}
       propertyPath: secondaryPointer
       value: 
-      objectReference: {fileID: 1260162969032316290}
+      objectReference: {fileID: 0}
     - target: {fileID: 1173288830360460107, guid: 7dca5fe5ef22ccb438cd78f7670bed9b,
         type: 3}
       propertyPath: controllerTransform
@@ -23720,7 +23740,7 @@ PrefabInstance:
         type: 3}
       propertyPath: secondaryPointer
       value: 
-      objectReference: {fileID: 1260162969032316290}
+      objectReference: {fileID: 0}
     - target: {fileID: 8759128046664761682, guid: 7dca5fe5ef22ccb438cd78f7670bed9b,
         type: 3}
       propertyPath: controllerTransform
@@ -28965,7 +28985,7 @@ PrefabInstance:
     - target: {fileID: 8727609580199192062, guid: 02b75409706eab14f8bca00475954fc5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.55
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8727609580199192062, guid: 02b75409706eab14f8bca00475954fc5,
         type: 3}
@@ -29010,6 +29030,16 @@ PrefabInstance:
     - target: {fileID: 8727609580199192062, guid: 02b75409706eab14f8bca00475954fc5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8727609580798938475, guid: 02b75409706eab14f8bca00475954fc5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8727609581121092972, guid: 02b75409706eab14f8bca00475954fc5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -39837,7 +39867,7 @@ PrefabInstance:
         type: 3}
       propertyPath: secondaryPointer
       value: 
-      objectReference: {fileID: 1260162969032316290}
+      objectReference: {fileID: 0}
     - target: {fileID: 1339387906819143728, guid: 9afed96f29e1bd74b9cca76ccd78afbc,
         type: 3}
       propertyPath: controllerTransform
@@ -39852,7 +39882,7 @@ PrefabInstance:
         type: 3}
       propertyPath: secondaryPointer
       value: 
-      objectReference: {fileID: 1260162969032316290}
+      objectReference: {fileID: 0}
     - target: {fileID: 2863270558987592780, guid: 9afed96f29e1bd74b9cca76ccd78afbc,
         type: 3}
       propertyPath: controllerTransform
@@ -57061,7 +57091,7 @@ PrefabInstance:
         type: 3}
       propertyPath: secondaryPointer
       value: 
-      objectReference: {fileID: 1260162969032316290}
+      objectReference: {fileID: 0}
     - target: {fileID: 2419782160081019090, guid: 2365b55c902880949af89fbda464e442,
         type: 3}
       propertyPath: controllerTransform
@@ -57076,7 +57106,7 @@ PrefabInstance:
         type: 3}
       propertyPath: secondaryPointer
       value: 
-      objectReference: {fileID: 1260162969032316290}
+      objectReference: {fileID: 0}
     - target: {fileID: 8107743129984622093, guid: 2365b55c902880949af89fbda464e442,
         type: 3}
       propertyPath: controllerTransform
@@ -57091,7 +57121,7 @@ PrefabInstance:
         type: 3}
       propertyPath: secondaryPointer
       value: 
-      objectReference: {fileID: 1260162969032316290}
+      objectReference: {fileID: 0}
     - target: {fileID: 9222508925700540649, guid: 2365b55c902880949af89fbda464e442,
         type: 3}
       propertyPath: controllerTransform
@@ -57106,7 +57136,7 @@ PrefabInstance:
         type: 3}
       propertyPath: secondaryPointer
       value: 
-      objectReference: {fileID: 1260162969032316290}
+      objectReference: {fileID: 0}
     - target: {fileID: 305256461815558967, guid: 2365b55c902880949af89fbda464e442,
         type: 3}
       propertyPath: controllerTransform
@@ -57121,7 +57151,7 @@ PrefabInstance:
         type: 3}
       propertyPath: secondaryPointer
       value: 
-      objectReference: {fileID: 1260162969032316290}
+      objectReference: {fileID: 0}
     - target: {fileID: 2122485999341463579, guid: 2365b55c902880949af89fbda464e442,
         type: 3}
       propertyPath: controllerTransform
@@ -57311,7 +57341,7 @@ PrefabInstance:
         type: 3}
       propertyPath: secondaryPointer
       value: 
-      objectReference: {fileID: 1260162969032316290}
+      objectReference: {fileID: 0}
     - target: {fileID: 4988529999259701479, guid: 78c1980edabf6dd4bb75e7cc9653c08c,
         type: 3}
       propertyPath: controllerTransform
@@ -57326,7 +57356,7 @@ PrefabInstance:
         type: 3}
       propertyPath: secondaryPointer
       value: 
-      objectReference: {fileID: 1260162969032316290}
+      objectReference: {fileID: 0}
     - target: {fileID: 4879484386474878253, guid: 78c1980edabf6dd4bb75e7cc9653c08c,
         type: 3}
       propertyPath: controllerTransform
@@ -57341,7 +57371,7 @@ PrefabInstance:
         type: 3}
       propertyPath: secondaryPointer
       value: 
-      objectReference: {fileID: 1260162969032316290}
+      objectReference: {fileID: 0}
     - target: {fileID: 2389514456042305829, guid: 78c1980edabf6dd4bb75e7cc9653c08c,
         type: 3}
       propertyPath: controllerTransform
@@ -57356,7 +57386,7 @@ PrefabInstance:
         type: 3}
       propertyPath: secondaryPointer
       value: 
-      objectReference: {fileID: 1260162969032316290}
+      objectReference: {fileID: 0}
     - target: {fileID: 2879938264447782136, guid: 78c1980edabf6dd4bb75e7cc9653c08c,
         type: 3}
       propertyPath: controllerTransform
@@ -57521,7 +57551,7 @@ PrefabInstance:
         type: 3}
       propertyPath: secondaryPointer
       value: 
-      objectReference: {fileID: 1260162969032316290}
+      objectReference: {fileID: 0}
     - target: {fileID: 918157845015701100, guid: 7680118463c616f49ab3987b2faf6028,
         type: 3}
       propertyPath: controllerTransform
@@ -57640,7 +57670,7 @@ PrefabInstance:
         type: 3}
       propertyPath: secondaryPointer
       value: 
-      objectReference: {fileID: 1260162969032316290}
+      objectReference: {fileID: 0}
     - target: {fileID: 4359932855963936583, guid: 69e602390bd0e2040b027b0535397f7c,
         type: 3}
       propertyPath: onOpen.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -57665,7 +57695,7 @@ PrefabInstance:
         type: 3}
       propertyPath: secondaryPointer
       value: 
-      objectReference: {fileID: 1260162969032316290}
+      objectReference: {fileID: 0}
     - target: {fileID: 7839221761437090507, guid: 69e602390bd0e2040b027b0535397f7c,
         type: 3}
       propertyPath: controllerTransform
@@ -58370,7 +58400,7 @@ PrefabInstance:
         type: 3}
       propertyPath: secondaryPointer
       value: 
-      objectReference: {fileID: 1260162969032316290}
+      objectReference: {fileID: 0}
     - target: {fileID: 1173288830360460107, guid: 7dca5fe5ef22ccb438cd78f7670bed9b,
         type: 3}
       propertyPath: controllerTransform
@@ -58385,7 +58415,7 @@ PrefabInstance:
         type: 3}
       propertyPath: secondaryPointer
       value: 
-      objectReference: {fileID: 1260162969032316290}
+      objectReference: {fileID: 0}
     - target: {fileID: 8759128046664761682, guid: 7dca5fe5ef22ccb438cd78f7670bed9b,
         type: 3}
       propertyPath: controllerTransform
@@ -58499,7 +58529,7 @@ PrefabInstance:
         type: 3}
       propertyPath: secondaryPointer
       value: 
-      objectReference: {fileID: 1260162969032316290}
+      objectReference: {fileID: 0}
     - target: {fileID: 7116215217110464890, guid: 6289bacec76100f45835900167504dd4,
         type: 3}
       propertyPath: openRotation.y
@@ -58519,7 +58549,7 @@ PrefabInstance:
         type: 3}
       propertyPath: secondaryPointer
       value: 
-      objectReference: {fileID: 1260162969032316290}
+      objectReference: {fileID: 0}
     - target: {fileID: 2455004744509343889, guid: 6289bacec76100f45835900167504dd4,
         type: 3}
       propertyPath: controllerTransform
@@ -58669,7 +58699,7 @@ PrefabInstance:
         type: 3}
       propertyPath: secondaryPointer
       value: 
-      objectReference: {fileID: 1260162969032316290}
+      objectReference: {fileID: 0}
     - target: {fileID: 3335946020979073742, guid: 58397f1b855a08845934549db4365eac,
         type: 3}
       propertyPath: secondaryIndexTrigger
@@ -58689,7 +58719,7 @@ PrefabInstance:
         type: 3}
       propertyPath: secondaryPointer
       value: 
-      objectReference: {fileID: 1260162969032316290}
+      objectReference: {fileID: 0}
     - target: {fileID: 1136915522566570497, guid: 58397f1b855a08845934549db4365eac,
         type: 3}
       propertyPath: secondaryIndexTrigger
@@ -58709,7 +58739,7 @@ PrefabInstance:
         type: 3}
       propertyPath: secondaryPointer
       value: 
-      objectReference: {fileID: 1260162969032316290}
+      objectReference: {fileID: 0}
     - target: {fileID: 470500890147770865, guid: 58397f1b855a08845934549db4365eac,
         type: 3}
       propertyPath: controllerTransform
@@ -58724,7 +58754,7 @@ PrefabInstance:
         type: 3}
       propertyPath: secondaryPointer
       value: 
-      objectReference: {fileID: 1260162969032316290}
+      objectReference: {fileID: 0}
     - target: {fileID: 9131202441592558349, guid: 58397f1b855a08845934549db4365eac,
         type: 3}
       propertyPath: primaryPointer
@@ -58749,7 +58779,7 @@ PrefabInstance:
         type: 3}
       propertyPath: secondaryPointer
       value: 
-      objectReference: {fileID: 1260162969032316290}
+      objectReference: {fileID: 0}
     - target: {fileID: 3188608365463773525, guid: 58397f1b855a08845934549db4365eac,
         type: 3}
       propertyPath: controllerTransform
@@ -58764,7 +58794,7 @@ PrefabInstance:
         type: 3}
       propertyPath: secondaryPointer
       value: 
-      objectReference: {fileID: 1260162969032316290}
+      objectReference: {fileID: 0}
     - target: {fileID: 692572987344716896, guid: 58397f1b855a08845934549db4365eac,
         type: 3}
       propertyPath: controllerTransform
@@ -58779,7 +58809,7 @@ PrefabInstance:
         type: 3}
       propertyPath: secondaryPointer
       value: 
-      objectReference: {fileID: 1260162969032316290}
+      objectReference: {fileID: 0}
     - target: {fileID: 818201698936710899, guid: 58397f1b855a08845934549db4365eac,
         type: 3}
       propertyPath: controllerTransform
