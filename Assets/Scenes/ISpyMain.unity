@@ -44438,6 +44438,22 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
+    - target: {fileID: 1030995381, guid: abc00000000009114223320819729878, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9ee8cbad5ae065441bad91a27b7c128e, type: 2}
+    - target: {fileID: 1030995385, guid: abc00000000009114223320819729878, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9ee8cbad5ae065441bad91a27b7c128e, type: 2}
+    - target: {fileID: 1030995389, guid: abc00000000009114223320819729878, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9ee8cbad5ae065441bad91a27b7c128e, type: 2}
+    - target: {fileID: 1030995393, guid: abc00000000009114223320819729878, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9ee8cbad5ae065441bad91a27b7c128e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abc00000000009114223320819729878, type: 3}
 --- !u!4 &1650563065 stripped
@@ -57275,7 +57291,7 @@ PrefabInstance:
     - target: {fileID: 128948540421669014, guid: 78c1980edabf6dd4bb75e7cc9653c08c,
         type: 3}
       propertyPath: m_Name
-      value: KitchenShelfANew
+      value: KitchenShelfANew(Livingroom)
       objectReference: {fileID: 0}
     - target: {fileID: 4004060550802010757, guid: 78c1980edabf6dd4bb75e7cc9653c08c,
         type: 3}
