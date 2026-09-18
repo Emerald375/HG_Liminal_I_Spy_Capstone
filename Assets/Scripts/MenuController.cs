@@ -17,7 +17,6 @@ public class MenuController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             StartGame();
-            timerManager.StartTimer();
         }
         /*if (Input.GetKeyDown(KeyCode.Escape))
         {

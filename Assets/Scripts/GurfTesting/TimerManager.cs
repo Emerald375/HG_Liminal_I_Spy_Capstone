@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class TimerManager : MonoBehaviour
 {
 
-    public float timeRemaining = 60f;
+    private float currentTime = 1f;
     public Text timerText;
 
     private bool isTimerRunning = false;
@@ -27,15 +27,15 @@ public class TimerManager : MonoBehaviour
     {
         if(isTimerRunning)
         {
-            timeRemaining = timeRemaining- Time.deltaTime;
+            currentTime += Time.deltaTime;
 
-            /*if(timeRemaining <= 0)
-            {
-                Application.Quit()
-            }*/
+            int minutes = Mathf.FloorToInt(currentTime / 60);
+            int seconds = Mathf.FloorToInt(currentTime % 60);
+
+            timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
         }
         
-        timerText.text = timeRemaining.ToString();
+        
         
     }
 
