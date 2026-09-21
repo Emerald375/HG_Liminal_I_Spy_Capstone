@@ -24061,6 +24061,7 @@ GameObject:
   - component: {fileID: 807142185}
   - component: {fileID: 807142186}
   - component: {fileID: 807142184}
+  - component: {fileID: 807142187}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -24117,6 +24118,22 @@ MonoBehaviour:
   multiplierMaxTime: 5
   multiplierText: {fileID: 1637264072}
   multiplierBar: {fileID: 661734901}
+--- !u!114 &807142187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 807142183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5b2399581c064f40830f934daba6306, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enablePCControls: 1
+  primaryIndexTrigger: 1
+  secondaryIndexTrigger: 1
+  checklist: {fileID: 2115372749}
 --- !u!1 &820916270
 GameObject:
   m_ObjectHideFlags: 0
@@ -45475,7 +45492,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainMenu: {fileID: 1573834703}
-  timerManager: {fileID: 0}
+  timerManager: {fileID: 807142184}
 --- !u!4 &1681752060
 Transform:
   m_ObjectHideFlags: 0
