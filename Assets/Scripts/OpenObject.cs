@@ -99,6 +99,23 @@ public class OpenObject : MonoBehaviour
 
     private Coroutine animationCoroutine;
 
+    [Tooltip("Sound played when this object is selected.")]
+    public AudioClip openSound;
+    public AudioClip closeSound;
+
+    [Tooltip("Audio Source used to play the selection sound. " +
+             "STRONGLY recommended to assign this on Quest builds — if left " +
+             "empty, PlayClipAtPoint() will be used instead, which allocates a " +
+             "brand-new temporary GameObject/AudioSource every call. That " +
+             "allocation can cause a frame hitch on mobile hardware at the exact " +
+             "moment the shrink animation starts, making it look like the " +
+             "animation isn't playing at all.")]
+    public AudioSource audioSource;
+
+    [Range(0f, 1f)]
+    [Tooltip("Volume of the selection sound.")]
+    public float soundVolume = 1f;
+
 
     /// <summary>
     /// Returns the current open state of this object.
@@ -333,6 +350,8 @@ public class OpenObject : MonoBehaviour
                 OpenState.Open
             )
         );
+
+        PlayOpenSound();
     }
 
 
@@ -368,6 +387,8 @@ public class OpenObject : MonoBehaviour
                 OpenState.Closed
             )
         );
+
+        PlayCloseSound();
     }
 
 
@@ -544,5 +565,56 @@ public class OpenObject : MonoBehaviour
         currentState = OpenState.Closed;
 
         animationCoroutine = null;
+    }
+
+    private void PlayOpenSound()
+    {
+        if (openSound == null)
+            return;
+
+
+        if (audioSource != null)
+        {
+            audioSource.PlayOneShot(
+                openSound,
+                soundVolume
+            );
+        }
+        else
+        {
+            // NOTE: this allocates a temporary GameObject + AudioSource every
+            // call, which can cause a frame hitch on Quest. Assign the
+            // audioSource field above to avoid this path.
+            AudioSource.PlayClipAtPoint(
+                openSound,
+                transform.position,
+                soundVolume
+            );
+        }
+    }
+    private void PlayCloseSound()
+    {
+        if (closeSound == null)
+            return;
+
+
+        if (audioSource != null)
+        {
+            audioSource.PlayOneShot(
+                closeSound,
+                soundVolume
+            );
+        }
+        else
+        {
+            // NOTE: this allocates a temporary GameObject + AudioSource every
+            // call, which can cause a frame hitch on Quest. Assign the
+            // audioSource field above to avoid this path.
+            AudioSource.PlayClipAtPoint(
+                closeSound,
+                transform.position,
+                soundVolume
+            );
+        }
     }
 }
