@@ -23,12 +23,12 @@ public class ToggleChecklist : MonoBehaviour
 
 #if UNITY_ANDROID || UNITY_EDITOR
 
-        if (primaryIndexTrigger)
+        /*if (primaryIndexTrigger)
         {
             primaryPressed = OVRInput.GetDown(
                 OVRInput.Button.PrimaryIndexTrigger
             );
-        }
+        }*/
 
         if (secondaryIndexTrigger)
         {
