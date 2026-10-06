@@ -20,9 +20,6 @@ public class TimerManager : MonoBehaviour
         //StartCountdown();
     }
 
-
-
-
     void Update()
     {
         if(isTimerRunning)
@@ -35,10 +32,7 @@ public class TimerManager : MonoBehaviour
             timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
         }
         
-        
-        
     }
-
 
     public void StartTimer()
     {
@@ -67,6 +61,7 @@ public class TimerManager : MonoBehaviour
 
     public void StartCountdown()
     {
+        countdownText.gameObject.SetActive(true);
         StartCoroutine(Countdown());
     }
 }
