@@ -112,9 +112,9 @@ public class OpenObject : MonoBehaviour
              "animation isn't playing at all.")]
     public AudioSource audioSource;
 
-    [Range(0f, 1f)]
+    [Range(0f, 10f)]
     [Tooltip("Volume of the selection sound.")]
-    public float soundVolume = 1f;
+    public float soundVolume = 10f;
 
 
     /// <summary>

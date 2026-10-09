@@ -11,11 +11,16 @@ public class TimerManager : MonoBehaviour
 
     private bool isTimerRunning = false;
 
-    public Text countdownText; 
+    public Text countdownText;
+
+    public GameObject checklist;
+    public GameObject teleportSpots;
 
 
     void Start()
     {
+        checklist.gameObject.SetActive(false);
+        teleportSpots.gameObject.SetActive(false);
         timerText.gameObject.SetActive(false);
         //StartCountdown();
     }
@@ -55,13 +60,19 @@ public class TimerManager : MonoBehaviour
         yield return new WaitForSeconds(1);
 
         countdownText.gameObject.SetActive(false);
+        EnableGameplay();
         StartTimer();
-
     }
 
     public void StartCountdown()
     {
         countdownText.gameObject.SetActive(true);
         StartCoroutine(Countdown());
+    }
+
+    public void EnableGameplay()
+    {
+        checklist.gameObject.SetActive(true);
+        teleportSpots.gameObject.SetActive(true);
     }
 }
