@@ -13,10 +13,11 @@ public class ChecklistItem : MonoBehaviour
     public AudioClip scribbleSound;
     public AudioSource audioSource;
 
-    [Range(0f, 1f)]
+    [Range(0f, 10f)]
     [Tooltip("Volume of the selection sound.")]
-    public float soundVolume = 1f;
+    public float soundVolume = 10f;
 
+    public WinScreen winScreen;
 
     public void MarkAsFound()
     {
@@ -29,6 +30,7 @@ public class ChecklistItem : MonoBehaviour
         checklistText.text = "[X] " + propName;
         
         PlayScribbleSound();
+        winScreen.ItemsFoundCounter();
     }
 
     private void PlayScribbleSound()
