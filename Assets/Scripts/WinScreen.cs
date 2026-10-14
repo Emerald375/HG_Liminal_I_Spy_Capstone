@@ -9,6 +9,8 @@ public class WinScreen : MonoBehaviour
     public float itemsFound = 0f;
     public float totalItems;
 
+    public bool gameEnded = false;
+
     void Start()
     {
         winScreen.gameObject.SetActive(false);
@@ -32,5 +34,6 @@ public class WinScreen : MonoBehaviour
     public void ActivateWinScreen()
     {
         winScreen.gameObject.SetActive(true);
+        gameEnded = true;
     }
 }
