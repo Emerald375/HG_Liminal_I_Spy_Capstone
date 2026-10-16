@@ -18,6 +18,20 @@ public class HintControlsMenus : MonoBehaviour
     private float hintTimer2; //Timer to toggle OFF UI 
     private bool timer2Running = false;
 
+    public Transform objectsToFind;
+    public Material glowMaterial;
+    private Material originalMaterial;
+    private MeshRenderer currentObjectMeshRenderer;
+
+    private float glowTimer;
+    private bool glowTimerRunning = false;
+
+    public AudioClip hintSound;
+    public AudioSource audioSource;
+    [Range(0f, 10f)]
+    [Tooltip("Volume of the selection sound.")]
+    public float soundVolume = 10f;
+
     public bool enablePCControls = true;
     public bool primaryIndexTrigger = true;
     public bool secondaryIndexTrigger = true;
@@ -97,12 +111,25 @@ public class HintControlsMenus : MonoBehaviour
                 }
             }
         }
+
+        if (glowTimerRunning == true)
+        {
+            if (glowTimer > 0)
+            {
+                glowTimer -= Time.deltaTime;
+            }
+            else
+            {
+                currentObjectMeshRenderer.material = originalMaterial; // change back to original material
+                glowTimerRunning = false;
+            }
+        }
     }
-    public void hintRequested()
+    public void HintRequested()
     {
         hintScreen.gameObject.SetActive(false);
-        //Make random item glow
-
+        PickObjectToGlow();
+        PlayHintSOund();
 
         timer2Running = false;
         timerRunning = true;
@@ -113,6 +140,45 @@ public class HintControlsMenus : MonoBehaviour
         else
         {
             hintTimer = 10f;
+        }
+    }
+
+    public void PickObjectToGlow()
+    {
+        if (objectsToFind.childCount == 0) return;
+
+        int randomIndex = Random.Range(0, objectsToFind.childCount);
+        GameObject randomItem = objectsToFind.GetChild(randomIndex).gameObject;
+
+        Debug.Log("Picked: " + randomItem.name);
+
+        currentObjectMeshRenderer = randomItem.GetComponent<MeshRenderer>();
+        originalMaterial = currentObjectMeshRenderer.material; //save original material
+        currentObjectMeshRenderer.material = glowMaterial; // change to glow material
+
+        glowTimerRunning = true;
+        glowTimer = 15f;
+    }
+
+    private void PlayHintSOund()
+    {
+        if (hintSound == null)
+            return;
+
+        if (audioSource != null)
+        {
+            audioSource.PlayOneShot(
+                hintSound,
+                soundVolume
+            );
+        }
+        else
+        {
+            AudioSource.PlayClipAtPoint(
+                hintSound,
+                transform.position,
+                soundVolume
+            );
         }
     }
 
@@ -139,8 +205,13 @@ public class HintControlsMenus : MonoBehaviour
 #endif
         if (primaryPressed || secondaryPressed)
         {
-            hintRequested();
+            HintRequested();
         }
+
+        /*if ()
+        {
+            ToggleControlsScreen();
+        }*/
     }
 
     private void CheckPCInput()
@@ -150,11 +221,16 @@ public class HintControlsMenus : MonoBehaviour
 
         if (Input.GetMouseButtonDown(2)) //Middle Mouse
         {
-            hintRequested();
+            HintRequested();
+        }
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            ToggleControlsScreen();
         }
     }
 
-    /*public void ToggleControlsScreen()
+    public void ToggleControlsScreen()
     {
         if (controlsScreen.activeSelf)
         {
@@ -165,16 +241,4 @@ public class HintControlsMenus : MonoBehaviour
             controlsScreen.gameObject.SetActive(true);
         }
     }
-
-    public void ToggleHintScreen()
-    {
-        if (controlsScreen.activeSelf)
-        {
-            hintScreen.gameObject.SetActive(false);
-        }
-        else
-        {
-            hintScreen.gameObject.SetActive(true);
-        }
-    }*/
 }
