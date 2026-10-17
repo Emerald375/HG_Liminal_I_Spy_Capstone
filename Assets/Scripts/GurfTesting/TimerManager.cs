@@ -16,12 +16,15 @@ public class TimerManager : MonoBehaviour
     public GameObject checklist;
     public GameObject teleportSpots;
 
+    public GameObject countdownCanvas;
+
 
     void Start()
     {
         checklist.gameObject.SetActive(false);
         teleportSpots.gameObject.SetActive(false);
         timerText.gameObject.SetActive(false);
+        countdownCanvas.SetActive(false);
         //StartCountdown();
     }
 
@@ -66,6 +69,7 @@ public class TimerManager : MonoBehaviour
 
     public void StartCountdown()
     {
+        countdownCanvas.SetActive(true);
         countdownText.gameObject.SetActive(true);
         StartCoroutine(Countdown());
     }

@@ -7532,6 +7532,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8727609580199192048, guid: 02b75409706eab14f8bca00475954fc5,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02b75409706eab14f8bca00475954fc5, type: 3}
 --- !u!114 &263334672 stripped
@@ -12622,7 +12627,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &436964252
 Transform:
   m_ObjectHideFlags: 0
@@ -19127,7 +19132,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'In this experience, you''ll have to go around the room finding
 
-    all the items on your. Give it your best shot!'
+    all the items on your checklist. Give it your best shot!'
 --- !u!222 &644941273
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -27804,6 +27809,7 @@ MonoBehaviour:
   countdownText: {fileID: 297825854}
   checklist: {fileID: 2118758535}
   teleportSpots: {fileID: 147407251}
+  countdownCanvas: {fileID: 1578744549}
 --- !u!4 &807142185
 Transform:
   m_ObjectHideFlags: 0
@@ -34486,7 +34492,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 1.76}
-  m_SizeDelta: {x: 859, y: 604.7736}
+  m_SizeDelta: {x: 1250, y: 604.7736}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1023182151
 PrefabInstance:
@@ -35035,7 +35041,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1032926303
 RectTransform:
   m_ObjectHideFlags: 0
@@ -53331,7 +53337,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1578744550
 RectTransform:
   m_ObjectHideFlags: 0
@@ -58686,8 +58692,6 @@ GameObject:
   - component: {fileID: 1759635015}
   - component: {fileID: 1759635014}
   - component: {fileID: 1759635013}
-  - component: {fileID: 1759635018}
-  - component: {fileID: 1759635017}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: Untagged
@@ -58835,44 +58839,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1759635011}
   m_CullTransparentMesh: 0
---- !u!114 &1759635017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1759635011}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
---- !u!223 &1759635018
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1759635011}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 2
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_TargetDisplay: 0
 --- !u!1001 &1760022099
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63954,7 +63920,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1924859725}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.513}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 436964252}
@@ -63973,8 +63939,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 386cf6118dcf68a429808c325682186f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hand: 0
-  rayOrigin: {fileID: 0}
+  hand: 1
+  rayOrigin: {fileID: 1924859726}
   isPCFallbackPointer: 1
   maxDistance: 99999
   hotspotLayerMask:
@@ -69501,7 +69467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fa6ff3fc3aab684c93558b30984c34e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  headTransform: {fileID: 1260162968458898735}
+  headTransform: {fileID: 1260162969878476899}
   smoothRotation: 1
   rotationSpeed: 5
 --- !u!1001 &2118220058
