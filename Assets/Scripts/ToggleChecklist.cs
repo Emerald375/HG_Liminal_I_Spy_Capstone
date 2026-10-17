@@ -20,7 +20,7 @@ public class ToggleChecklist : MonoBehaviour
     {
         bool primaryPressed = false;
         bool secondaryPressed = false;
-
+        /*
 #if UNITY_ANDROID || UNITY_EDITOR
 
         /*if (primaryIndexTrigger)
@@ -28,7 +28,7 @@ public class ToggleChecklist : MonoBehaviour
             primaryPressed = OVRInput.GetDown(
                 OVRInput.Button.PrimaryIndexTrigger
             );
-        }*/
+        }
 
         if (secondaryIndexTrigger)
         {
@@ -40,7 +40,12 @@ public class ToggleChecklist : MonoBehaviour
         if (primaryPressed || secondaryPressed)
         {
             Toggle();
+        }*/
+        if (OVRInput.GetDown(OVRInput.RawButton.LIndexTrigger))
+        {
+            Toggle();
         }
+
     }
 
     private void CheckPCInput()
@@ -48,7 +53,7 @@ public class ToggleChecklist : MonoBehaviour
         if (!enablePCControls)
             return;
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1)) // Right Click
         {
             Toggle();
         }

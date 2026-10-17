@@ -168,6 +168,11 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   currentState: 0
+  openSound: {fileID: 0}
+  closeSound: {fileID: 0}
+  audioSource: {fileID: 0}
+  soundVolume: 1
+  menuController: {fileID: 0}
 --- !u!114 &305256461815559112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,6 +211,7 @@ MonoBehaviour:
   hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   indexTriggerColor: {r: 0, g: 1, b: 0, a: 1}
   handTriggerColor: {r: 0, g: 0, b: 1, a: 1}
+  menuController: {fileID: 0}
 --- !u!1 &1668272781750209559
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,6 +317,11 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   currentState: 0
+  openSound: {fileID: 0}
+  closeSound: {fileID: 0}
+  audioSource: {fileID: 0}
+  soundVolume: 1
+  menuController: {fileID: 0}
 --- !u!1 &1668272782779777111
 GameObject:
   m_ObjectHideFlags: 0
@@ -584,6 +595,7 @@ MonoBehaviour:
   hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   indexTriggerColor: {r: 0, g: 1, b: 0, a: 1}
   handTriggerColor: {r: 0, g: 0, b: 1, a: 1}
+  menuController: {fileID: 0}
 --- !u!65 &2122485999341463581
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -845,6 +857,11 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   currentState: 0
+  openSound: {fileID: 0}
+  closeSound: {fileID: 0}
+  audioSource: {fileID: 0}
+  soundVolume: 1
+  menuController: {fileID: 0}
 --- !u!114 &2419782160081019090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -865,6 +882,7 @@ MonoBehaviour:
   hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   indexTriggerColor: {r: 0, g: 1, b: 0, a: 1}
   handTriggerColor: {r: 0, g: 0, b: 1, a: 1}
+  menuController: {fileID: 0}
 --- !u!114 &2419782160081019089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1382,6 +1400,11 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   currentState: 0
+  openSound: {fileID: 0}
+  closeSound: {fileID: 0}
+  audioSource: {fileID: 0}
+  soundVolume: 1
+  menuController: {fileID: 0}
 --- !u!114 &8107743129984622093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1402,6 +1425,7 @@ MonoBehaviour:
   hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   indexTriggerColor: {r: 0, g: 1, b: 0, a: 1}
   handTriggerColor: {r: 0, g: 0, b: 1, a: 1}
+  menuController: {fileID: 0}
 --- !u!114 &8107743129984622092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1678,6 +1702,11 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   currentState: 0
+  openSound: {fileID: 0}
+  closeSound: {fileID: 0}
+  audioSource: {fileID: 0}
+  soundVolume: 1
+  menuController: {fileID: 0}
 --- !u!114 &9222508925700540650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1716,3 +1745,4 @@ MonoBehaviour:
   hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   indexTriggerColor: {r: 0, g: 1, b: 0, a: 1}
   handTriggerColor: {r: 0, g: 0, b: 1, a: 1}
+  menuController: {fileID: 0}

@@ -80,9 +80,9 @@ public class SelectObject : MonoBehaviour
              "animation isn't playing at all.")]
     public AudioSource audioSource;
 
-    [Range(0f, 1f)]
+    [Range(0f, 10f)]
     [Tooltip("Volume of the selection sound.")]
-    public float soundVolume = 1f;
+    public float soundVolume = 10f;
 
 
     [Header("Selection Information")]
@@ -118,6 +118,7 @@ public class SelectObject : MonoBehaviour
     private bool isHovered = false;
     private bool hasBeenSelected = false;
 
+    [SerializeField] private MenuController menuController;
 
     /// <summary>
     /// Returns the current selection state of this object.
@@ -181,6 +182,8 @@ public class SelectObject : MonoBehaviour
 
     private void Update()
     {
+        if (menuController.gameStarted == false) return;
+
         if (hasBeenSelected)
             return;
 
@@ -287,7 +290,7 @@ public class SelectObject : MonoBehaviour
 #endif
 
 
-        if (primaryPressed || secondaryPressed)
+        if (primaryPressed|| secondaryPressed)
         {
             if (debugLogging)
             {

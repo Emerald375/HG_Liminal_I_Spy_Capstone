@@ -27,6 +27,7 @@ public class HintControlsMenus : MonoBehaviour
     private bool glowTimerRunning = false;
 
     public AudioClip hintSound;
+    public AudioClip hintCooldownSound;
     public AudioSource audioSource;
     [Range(0f, 10f)]
     [Tooltip("Volume of the selection sound.")]
@@ -38,8 +39,8 @@ public class HintControlsMenus : MonoBehaviour
 
     void Start()
     {
-        controlsScreen.gameObject.SetActive(false);
         hintScreen.gameObject.SetActive(false);
+        controlsScreen.gameObject.SetActive(false);
 
         hintTimer = 45f;
         timerRunning = true;
@@ -49,6 +50,8 @@ public class HintControlsMenus : MonoBehaviour
 
     void Update()
     {
+        if (menuController.gameStarted == false) return;
+
         CheckPCInput();
         CheckQuestInput();
 
@@ -129,7 +132,7 @@ public class HintControlsMenus : MonoBehaviour
     {
         hintScreen.gameObject.SetActive(false);
         PickObjectToGlow();
-        PlayHintSOund();
+        PlayHintSound();
 
         timer2Running = false;
         timerRunning = true;
@@ -160,7 +163,7 @@ public class HintControlsMenus : MonoBehaviour
         glowTimer = 15f;
     }
 
-    private void PlayHintSOund()
+    private void PlayHintSound()
     {
         if (hintSound == null)
             return;
@@ -182,14 +185,35 @@ public class HintControlsMenus : MonoBehaviour
         }
     }
 
+    private void PlayHintCooldownSound()
+    {
+        if (hintSound == null)
+            return;
+
+        if (audioSource != null)
+        {
+            audioSource.PlayOneShot(
+                hintCooldownSound,
+                soundVolume
+            );
+        }
+        else
+        {
+            AudioSource.PlayClipAtPoint(
+                hintCooldownSound,
+                transform.position,
+                soundVolume
+            );
+        }
+    }
+
     private void CheckQuestInput()
     {
-        bool primaryPressed = false;
+        /*bool primaryPressed = false;
         bool secondaryPressed = false;
-
 #if UNITY_ANDROID || UNITY_EDITOR
 
-        if (primaryIndexTrigger)
+        /*if (primaryIndexTrigger)
         {
             primaryPressed = OVRInput.GetDown(
                 OVRInput.Button.PrimaryIndexTrigger
@@ -206,12 +230,23 @@ public class HintControlsMenus : MonoBehaviour
         if (primaryPressed || secondaryPressed)
         {
             HintRequested();
+        }*/
+        if (OVRInput.GetDown(OVRInput.RawButton.A))
+        {
+            if (glowTimerRunning == true)
+            {
+                PlayHintCooldownSound();
+            }
+            else
+            {
+                HintRequested();
+            }
         }
 
-        /*if ()
+        if (OVRInput.GetDown(OVRInput.RawButton.Start))
         {
             ToggleControlsScreen();
-        }*/
+        }
     }
 
     private void CheckPCInput()
@@ -219,9 +254,17 @@ public class HintControlsMenus : MonoBehaviour
         if (!enablePCControls)
             return;
 
+
         if (Input.GetMouseButtonDown(2)) //Middle Mouse
         {
-            HintRequested();
+            if (glowTimerRunning == true)
+            {
+                PlayHintCooldownSound();
+            }
+            else
+            {
+                HintRequested();
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.C))

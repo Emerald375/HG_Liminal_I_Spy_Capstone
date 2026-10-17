@@ -116,6 +116,7 @@ public class OpenObject : MonoBehaviour
     [Tooltip("Volume of the selection sound.")]
     public float soundVolume = 10f;
 
+    [SerializeField] private MenuController menuController;
 
     /// <summary>
     /// Returns the current open state of this object.
@@ -164,6 +165,8 @@ public class OpenObject : MonoBehaviour
 
     private void Update()
     {
+        if (menuController.gameStarted == false) return;
+
         CheckHover();
 
         if (isHovered)

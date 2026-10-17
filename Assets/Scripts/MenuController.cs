@@ -8,6 +8,9 @@ public class MenuController : MonoBehaviour
 
     public bool gameStarted = false;
 
+    private float countdownTimer = 3f;
+    private bool countdownRunning = false;
+
     private void Start()
     {
         Cursor.visible = true;
@@ -19,6 +22,22 @@ public class MenuController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             StartGame();
+        }
+
+        if (countdownRunning != true)
+        {
+            return;
+        }
+        else
+        {
+            if (countdownTimer > 0f)
+            {
+                countdownTimer -= Time.deltaTime;
+            }
+            else
+            {
+                gameStarted = true;
+            }
         }
         /*if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -35,7 +54,7 @@ public class MenuController : MonoBehaviour
     {
         MainMenu.SetActive(false);
         timerManager.StartCountdown();
-        gameStarted = true;
+        countdownRunning = true;
     }
 
 }

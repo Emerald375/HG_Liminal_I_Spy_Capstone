@@ -14,6 +14,8 @@ public class HighlightObject : MonoBehaviour
     public Color indexTriggerColor = Color.green;
     public Color handTriggerColor = Color.blue;
 
+    [SerializeField] private MenuController menuController;
+
     private enum HighlightState
     {
         None,
@@ -41,6 +43,8 @@ public class HighlightObject : MonoBehaviour
 
     void Update()
     {
+        if (menuController.gameStarted == false) return;
+
         RaycastHit hit;
 
         // Check if the controller is pointing at this object
