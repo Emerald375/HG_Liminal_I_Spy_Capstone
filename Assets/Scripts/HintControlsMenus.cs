@@ -138,11 +138,11 @@ public class HintControlsMenus : MonoBehaviour
         timerRunning = true;
         if (winScreen.itemsFound > 0)
         {
-            hintTimer = 20f;
+            hintTimer = 45f;
         }
         else
         {
-            hintTimer = 10f;
+            hintTimer = 90f;
         }
     }
 
