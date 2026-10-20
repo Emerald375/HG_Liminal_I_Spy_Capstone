@@ -33,6 +33,9 @@ public class HintControlsMenus : MonoBehaviour
     [Tooltip("Volume of the selection sound.")]
     public float soundVolume = 10f;
 
+    public Voiceover voiceover;
+    private bool voiceoverPlayed = false;
+
     public bool enablePCControls = true;
     public bool primaryIndexTrigger = true;
     public bool secondaryIndexTrigger = true;
@@ -71,6 +74,12 @@ public class HintControlsMenus : MonoBehaviour
                     timerRunning = false;
                     timer2Running = true;
                     hintTimer2 = 30f;
+
+                    if (voiceoverPlayed == false)
+                    {
+                        voiceover.PlayHintVoiceover();
+                        voiceoverPlayed = true;
+                    }
                 }
                 //reset hintTimer when an item is found
                 if (winScreen.itemsFound != itemsFoundHint)

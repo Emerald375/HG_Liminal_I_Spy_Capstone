@@ -11,6 +11,8 @@ public class WinScreen : MonoBehaviour
 
     public bool gameEnded = false;
 
+    public Voiceover voiceover;
+
     void Start()
     {
         winScreen.gameObject.SetActive(false);
@@ -34,6 +36,7 @@ public class WinScreen : MonoBehaviour
     public void ActivateWinScreen()
     {
         winScreen.gameObject.SetActive(true);
+        voiceover.PlayVictoryVoiceover();
         gameEnded = true;
     }
 }
