@@ -114,7 +114,7 @@ public class OpenObject : MonoBehaviour
 
     [Range(0f, 10f)]
     [Tooltip("Volume of the selection sound.")]
-    public float soundVolume = 10f;
+    public float soundVolume = 1f;
 
     [SerializeField] private MenuController menuController;
 

@@ -7657,7 +7657,7 @@ PrefabInstance:
     - target: {fileID: 7116215217110464890, guid: 6289bacec76100f45835900167504dd4,
         type: 3}
       propertyPath: soundVolume
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7116215217110464890, guid: 6289bacec76100f45835900167504dd4,
         type: 3}
@@ -7702,7 +7702,7 @@ PrefabInstance:
     - target: {fileID: 8766465104746201502, guid: 6289bacec76100f45835900167504dd4,
         type: 3}
       propertyPath: soundVolume
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8766465104746201502, guid: 6289bacec76100f45835900167504dd4,
         type: 3}
@@ -9685,7 +9685,7 @@ PrefabInstance:
     - target: {fileID: 2206336576032337153, guid: 78c1980edabf6dd4bb75e7cc9653c08c,
         type: 3}
       propertyPath: soundVolume
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2206336576032337153, guid: 78c1980edabf6dd4bb75e7cc9653c08c,
         type: 3}
@@ -9740,7 +9740,7 @@ PrefabInstance:
     - target: {fileID: 2206336575697091898, guid: 78c1980edabf6dd4bb75e7cc9653c08c,
         type: 3}
       propertyPath: soundVolume
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2206336575697091898, guid: 78c1980edabf6dd4bb75e7cc9653c08c,
         type: 3}
@@ -9795,7 +9795,7 @@ PrefabInstance:
     - target: {fileID: 2206336575793228987, guid: 78c1980edabf6dd4bb75e7cc9653c08c,
         type: 3}
       propertyPath: soundVolume
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2206336575793228987, guid: 78c1980edabf6dd4bb75e7cc9653c08c,
         type: 3}
@@ -9855,7 +9855,7 @@ PrefabInstance:
     - target: {fileID: 2206336576880790156, guid: 78c1980edabf6dd4bb75e7cc9653c08c,
         type: 3}
       propertyPath: soundVolume
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2206336576880790156, guid: 78c1980edabf6dd4bb75e7cc9653c08c,
         type: 3}
@@ -10439,9 +10439,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 83f2d6327436aaf46ae81ed83ebe2c91, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 532757f85f579a0409c15f16077c94d5, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.05
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -17097,7 +17097,7 @@ MonoBehaviour:
   openSound: {fileID: 8300000, guid: b99510ca73ea862418595a10d3008469, type: 3}
   closeSound: {fileID: 8300000, guid: 5954f7c80e5d08f41bc3d6243bc88d5a, type: 3}
   audioSource: {fileID: 375013963}
-  soundVolume: 10
+  soundVolume: 1
   menuController: {fileID: 1681752059}
 --- !u!64 &596991631
 MeshCollider:
@@ -27524,7 +27524,7 @@ PrefabInstance:
     - target: {fileID: 1173288830360460104, guid: 7dca5fe5ef22ccb438cd78f7670bed9b,
         type: 3}
       propertyPath: soundVolume
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1173288830360460104, guid: 7dca5fe5ef22ccb438cd78f7670bed9b,
         type: 3}
@@ -27569,7 +27569,7 @@ PrefabInstance:
     - target: {fileID: 8759128046664761680, guid: 7dca5fe5ef22ccb438cd78f7670bed9b,
         type: 3}
       propertyPath: soundVolume
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8759128046664761680, guid: 7dca5fe5ef22ccb438cd78f7670bed9b,
         type: 3}
@@ -31233,7 +31233,7 @@ MonoBehaviour:
   openSound: {fileID: 8300000, guid: b99510ca73ea862418595a10d3008469, type: 3}
   closeSound: {fileID: 8300000, guid: 5954f7c80e5d08f41bc3d6243bc88d5a, type: 3}
   audioSource: {fileID: 375013963}
-  soundVolume: 10
+  soundVolume: 1
   menuController: {fileID: 1681752059}
 --- !u!64 &917838739
 MeshCollider:
@@ -31758,7 +31758,7 @@ MonoBehaviour:
   openSound: {fileID: 8300000, guid: b99510ca73ea862418595a10d3008469, type: 3}
   closeSound: {fileID: 8300000, guid: 5954f7c80e5d08f41bc3d6243bc88d5a, type: 3}
   audioSource: {fileID: 375013963}
-  soundVolume: 10
+  soundVolume: 1
   menuController: {fileID: 1681752059}
 --- !u!1 &928766348
 GameObject:
@@ -49024,7 +49024,7 @@ MonoBehaviour:
   openSound: {fileID: 8300000, guid: b99510ca73ea862418595a10d3008469, type: 3}
   closeSound: {fileID: 8300000, guid: 5954f7c80e5d08f41bc3d6243bc88d5a, type: 3}
   audioSource: {fileID: 375013963}
-  soundVolume: 10
+  soundVolume: 1
   menuController: {fileID: 1681752059}
 --- !u!1001 &1445680837
 PrefabInstance:
@@ -49141,7 +49141,7 @@ PrefabInstance:
     - target: {fileID: 1339387906072557831, guid: 9afed96f29e1bd74b9cca76ccd78afbc,
         type: 3}
       propertyPath: soundVolume
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1339387906072557831, guid: 9afed96f29e1bd74b9cca76ccd78afbc,
         type: 3}
@@ -49186,7 +49186,7 @@ PrefabInstance:
     - target: {fileID: 2863270558987592779, guid: 9afed96f29e1bd74b9cca76ccd78afbc,
         type: 3}
       propertyPath: soundVolume
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2863270558987592779, guid: 9afed96f29e1bd74b9cca76ccd78afbc,
         type: 3}
@@ -66755,7 +66755,7 @@ MonoBehaviour:
   openSound: {fileID: 8300000, guid: b99510ca73ea862418595a10d3008469, type: 3}
   closeSound: {fileID: 8300000, guid: 5954f7c80e5d08f41bc3d6243bc88d5a, type: 3}
   audioSource: {fileID: 375013963}
-  soundVolume: 10
+  soundVolume: 1
   menuController: {fileID: 1681752059}
 --- !u!1001 &2007347337
 PrefabInstance:
@@ -71079,6 +71079,11 @@ PrefabInstance:
       propertyPath: menuController
       value: 
       objectReference: {fileID: 1681752059}
+    - target: {fileID: 360691212570595805, guid: 9033f3b603b9c8046b13382f576ebe4f,
+        type: 3}
+      propertyPath: soundVolume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 360691212570595803, guid: 9033f3b603b9c8046b13382f576ebe4f,
         type: 3}
       propertyPath: controllerTransform
@@ -71104,6 +71109,11 @@ PrefabInstance:
       propertyPath: winScreen
       value: 
       objectReference: {fileID: 807142188}
+    - target: {fileID: 360691212570595799, guid: 9033f3b603b9c8046b13382f576ebe4f,
+        type: 3}
+      propertyPath: soundVolume
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9033f3b603b9c8046b13382f576ebe4f, type: 3}
 --- !u!114 &389286678803827110
@@ -71231,6 +71241,11 @@ PrefabInstance:
       propertyPath: menuController
       value: 
       objectReference: {fileID: 1681752059}
+    - target: {fileID: 1745153829048416403, guid: cd7b4002d1cb63a42ac6ed96b8b56587,
+        type: 3}
+      propertyPath: soundVolume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1745153829048416415, guid: cd7b4002d1cb63a42ac6ed96b8b56587,
         type: 3}
       propertyPath: checklistText
@@ -71246,6 +71261,11 @@ PrefabInstance:
       propertyPath: winScreen
       value: 
       objectReference: {fileID: 807142188}
+    - target: {fileID: 1745153829048416415, guid: cd7b4002d1cb63a42ac6ed96b8b56587,
+        type: 3}
+      propertyPath: soundVolume
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd7b4002d1cb63a42ac6ed96b8b56587, type: 3}
 --- !u!4 &1260162968394785057
@@ -72494,7 +72514,7 @@ PrefabInstance:
     - target: {fileID: 8107743129984622094, guid: 2365b55c902880949af89fbda464e442,
         type: 3}
       propertyPath: soundVolume
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8107743129984622094, guid: 2365b55c902880949af89fbda464e442,
         type: 3}
@@ -72539,7 +72559,7 @@ PrefabInstance:
     - target: {fileID: 9222508925700540648, guid: 2365b55c902880949af89fbda464e442,
         type: 3}
       propertyPath: soundVolume
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9222508925700540648, guid: 2365b55c902880949af89fbda464e442,
         type: 3}
@@ -72584,7 +72604,7 @@ PrefabInstance:
     - target: {fileID: 305256461815558966, guid: 2365b55c902880949af89fbda464e442,
         type: 3}
       propertyPath: soundVolume
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 305256461815558966, guid: 2365b55c902880949af89fbda464e442,
         type: 3}
@@ -72629,7 +72649,7 @@ PrefabInstance:
     - target: {fileID: 1668272781750209577, guid: 2365b55c902880949af89fbda464e442,
         type: 3}
       propertyPath: soundVolume
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1668272781750209577, guid: 2365b55c902880949af89fbda464e442,
         type: 3}
@@ -72857,6 +72877,11 @@ PrefabInstance:
       propertyPath: menuController
       value: 
       objectReference: {fileID: 1681752059}
+    - target: {fileID: 2023559261389677232, guid: 7827667e68461c246958c3968fb69b5d,
+        type: 3}
+      propertyPath: soundVolume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2023559261389677234, guid: 7827667e68461c246958c3968fb69b5d,
         type: 3}
       propertyPath: controllerTransform
@@ -72882,6 +72907,11 @@ PrefabInstance:
       propertyPath: winScreen
       value: 
       objectReference: {fileID: 807142188}
+    - target: {fileID: 2023559261389677233, guid: 7827667e68461c246958c3968fb69b5d,
+        type: 3}
+      propertyPath: soundVolume
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7827667e68461c246958c3968fb69b5d, type: 3}
 --- !u!1001 &2206336577293560455
@@ -72984,7 +73014,7 @@ PrefabInstance:
     - target: {fileID: 2206336576032337153, guid: 78c1980edabf6dd4bb75e7cc9653c08c,
         type: 3}
       propertyPath: soundVolume
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2206336576032337153, guid: 78c1980edabf6dd4bb75e7cc9653c08c,
         type: 3}
@@ -73029,7 +73059,7 @@ PrefabInstance:
     - target: {fileID: 2206336575697091898, guid: 78c1980edabf6dd4bb75e7cc9653c08c,
         type: 3}
       propertyPath: soundVolume
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2206336575697091898, guid: 78c1980edabf6dd4bb75e7cc9653c08c,
         type: 3}
@@ -73074,7 +73104,7 @@ PrefabInstance:
     - target: {fileID: 2206336575793228987, guid: 78c1980edabf6dd4bb75e7cc9653c08c,
         type: 3}
       propertyPath: soundVolume
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2206336575793228987, guid: 78c1980edabf6dd4bb75e7cc9653c08c,
         type: 3}
@@ -73119,7 +73149,7 @@ PrefabInstance:
     - target: {fileID: 2206336576880790156, guid: 78c1980edabf6dd4bb75e7cc9653c08c,
         type: 3}
       propertyPath: soundVolume
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2206336576880790156, guid: 78c1980edabf6dd4bb75e7cc9653c08c,
         type: 3}
@@ -73461,6 +73491,11 @@ PrefabInstance:
       propertyPath: menuController
       value: 
       objectReference: {fileID: 1681752059}
+    - target: {fileID: 3402879717339884460, guid: 3513e93f105752243b587dd9fb1c12bf,
+        type: 3}
+      propertyPath: soundVolume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3402879717339884434, guid: 3513e93f105752243b587dd9fb1c12bf,
         type: 3}
       propertyPath: controllerTransform
@@ -73486,6 +73521,11 @@ PrefabInstance:
       propertyPath: winScreen
       value: 
       objectReference: {fileID: 807142188}
+    - target: {fileID: 3402879717339884432, guid: 3513e93f105752243b587dd9fb1c12bf,
+        type: 3}
+      propertyPath: soundVolume
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3513e93f105752243b587dd9fb1c12bf, type: 3}
 --- !u!1001 &3616053277762229738
@@ -73570,6 +73610,11 @@ PrefabInstance:
       propertyPath: winScreen
       value: 
       objectReference: {fileID: 807142188}
+    - target: {fileID: 3616053278005881294, guid: e1b60206939d7dc4ca2dabaf3438839c,
+        type: 3}
+      propertyPath: soundVolume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3616053278005881288, guid: e1b60206939d7dc4ca2dabaf3438839c,
         type: 3}
       propertyPath: controllerTransform
@@ -73610,6 +73655,11 @@ PrefabInstance:
       propertyPath: menuController
       value: 
       objectReference: {fileID: 1681752059}
+    - target: {fileID: 3616053278005881291, guid: e1b60206939d7dc4ca2dabaf3438839c,
+        type: 3}
+      propertyPath: soundVolume
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1b60206939d7dc4ca2dabaf3438839c, type: 3}
 --- !u!1001 &4048301143082024684
@@ -73709,6 +73759,11 @@ PrefabInstance:
       propertyPath: menuController
       value: 
       objectReference: {fileID: 1681752059}
+    - target: {fileID: 4048301143141955720, guid: c12a961118d9aa64a9b10ba97a95363d,
+        type: 3}
+      propertyPath: soundVolume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4048301143141955727, guid: c12a961118d9aa64a9b10ba97a95363d,
         type: 3}
       propertyPath: controllerTransform
@@ -73734,6 +73789,11 @@ PrefabInstance:
       propertyPath: winScreen
       value: 
       objectReference: {fileID: 807142188}
+    - target: {fileID: 4048301143141955725, guid: c12a961118d9aa64a9b10ba97a95363d,
+        type: 3}
+      propertyPath: soundVolume
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c12a961118d9aa64a9b10ba97a95363d, type: 3}
 --- !u!1001 &4109920370057262048
@@ -73836,7 +73896,7 @@ PrefabInstance:
     - target: {fileID: 4109920371149466665, guid: 7680118463c616f49ab3987b2faf6028,
         type: 3}
       propertyPath: soundVolume
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4109920371149466665, guid: 7680118463c616f49ab3987b2faf6028,
         type: 3}
@@ -74002,6 +74062,11 @@ PrefabInstance:
       propertyPath: menuController
       value: 
       objectReference: {fileID: 1681752059}
+    - target: {fileID: 4359932855963936583, guid: 69e602390bd0e2040b027b0535397f7c,
+        type: 3}
+      propertyPath: soundVolume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6549373047027788250, guid: 69e602390bd0e2040b027b0535397f7c,
         type: 3}
       propertyPath: controllerTransform
@@ -74042,6 +74107,11 @@ PrefabInstance:
       propertyPath: menuController
       value: 
       objectReference: {fileID: 1681752059}
+    - target: {fileID: 4359932856399757461, guid: 69e602390bd0e2040b027b0535397f7c,
+        type: 3}
+      propertyPath: soundVolume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7839221761437090507, guid: 69e602390bd0e2040b027b0535397f7c,
         type: 3}
       propertyPath: controllerTransform
@@ -74706,6 +74776,11 @@ PrefabInstance:
       propertyPath: menuController
       value: 
       objectReference: {fileID: 1681752059}
+    - target: {fileID: 6374356176133021169, guid: a9e53db9dfba8274bbc12bbbaf2ff27b,
+        type: 3}
+      propertyPath: soundVolume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6374356176133021172, guid: a9e53db9dfba8274bbc12bbbaf2ff27b,
         type: 3}
       propertyPath: controllerTransform
@@ -74731,6 +74806,11 @@ PrefabInstance:
       propertyPath: winScreen
       value: 
       objectReference: {fileID: 807142188}
+    - target: {fileID: 6374356176133021174, guid: a9e53db9dfba8274bbc12bbbaf2ff27b,
+        type: 3}
+      propertyPath: soundVolume
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9e53db9dfba8274bbc12bbbaf2ff27b, type: 3}
 --- !u!1001 &6863810813609022050
@@ -74925,6 +75005,11 @@ PrefabInstance:
       propertyPath: menuController
       value: 
       objectReference: {fileID: 1681752059}
+    - target: {fileID: 7487285229266722255, guid: a7bc404ba8d5e184da4d4b71804e9efe,
+        type: 3}
+      propertyPath: soundVolume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7487285229266722254, guid: a7bc404ba8d5e184da4d4b71804e9efe,
         type: 3}
       propertyPath: controllerTransform
@@ -74950,6 +75035,11 @@ PrefabInstance:
       propertyPath: winScreen
       value: 
       objectReference: {fileID: 807142188}
+    - target: {fileID: 7487285229266722252, guid: a7bc404ba8d5e184da4d4b71804e9efe,
+        type: 3}
+      propertyPath: soundVolume
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7bc404ba8d5e184da4d4b71804e9efe, type: 3}
 --- !u!114 &7559482362631577877
@@ -75061,6 +75151,11 @@ PrefabInstance:
       propertyPath: menuController
       value: 
       objectReference: {fileID: 1681752059}
+    - target: {fileID: 7904573790251360151, guid: dd565a32f60a1f34b9f082b6e0640988,
+        type: 3}
+      propertyPath: soundVolume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7904573790251360150, guid: dd565a32f60a1f34b9f082b6e0640988,
         type: 3}
       propertyPath: controllerTransform
@@ -75086,6 +75181,11 @@ PrefabInstance:
       propertyPath: winScreen
       value: 
       objectReference: {fileID: 807142188}
+    - target: {fileID: 7904573790251360148, guid: dd565a32f60a1f34b9f082b6e0640988,
+        type: 3}
+      propertyPath: soundVolume
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd565a32f60a1f34b9f082b6e0640988, type: 3}
 --- !u!1001 &8759128046656802860
@@ -75198,7 +75298,7 @@ PrefabInstance:
     - target: {fileID: 1173288830360460104, guid: 7dca5fe5ef22ccb438cd78f7670bed9b,
         type: 3}
       propertyPath: soundVolume
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1173288830360460104, guid: 7dca5fe5ef22ccb438cd78f7670bed9b,
         type: 3}
@@ -75243,7 +75343,7 @@ PrefabInstance:
     - target: {fileID: 8759128046664761680, guid: 7dca5fe5ef22ccb438cd78f7670bed9b,
         type: 3}
       propertyPath: soundVolume
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8759128046664761680, guid: 7dca5fe5ef22ccb438cd78f7670bed9b,
         type: 3}
@@ -75402,7 +75502,7 @@ PrefabInstance:
     - target: {fileID: 7116215217110464890, guid: 6289bacec76100f45835900167504dd4,
         type: 3}
       propertyPath: soundVolume
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7116215217110464890, guid: 6289bacec76100f45835900167504dd4,
         type: 3}
@@ -75447,7 +75547,7 @@ PrefabInstance:
     - target: {fileID: 8766465104746201502, guid: 6289bacec76100f45835900167504dd4,
         type: 3}
       propertyPath: soundVolume
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8766465104746201502, guid: 6289bacec76100f45835900167504dd4,
         type: 3}
@@ -75657,7 +75757,7 @@ PrefabInstance:
     - target: {fileID: 3335946020979073742, guid: 58397f1b855a08845934549db4365eac,
         type: 3}
       propertyPath: soundVolume
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3335946020979073742, guid: 58397f1b855a08845934549db4365eac,
         type: 3}
@@ -75707,7 +75807,7 @@ PrefabInstance:
     - target: {fileID: 1136915522566570497, guid: 58397f1b855a08845934549db4365eac,
         type: 3}
       propertyPath: soundVolume
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1136915522566570497, guid: 58397f1b855a08845934549db4365eac,
         type: 3}
@@ -75752,7 +75852,7 @@ PrefabInstance:
     - target: {fileID: 470500890147770871, guid: 58397f1b855a08845934549db4365eac,
         type: 3}
       propertyPath: soundVolume
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 470500890147770871, guid: 58397f1b855a08845934549db4365eac,
         type: 3}
@@ -75797,7 +75897,7 @@ PrefabInstance:
     - target: {fileID: 9131202441592558338, guid: 58397f1b855a08845934549db4365eac,
         type: 3}
       propertyPath: soundVolume
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9131202441592558338, guid: 58397f1b855a08845934549db4365eac,
         type: 3}
@@ -75852,7 +75952,7 @@ PrefabInstance:
     - target: {fileID: 3188608365463773515, guid: 58397f1b855a08845934549db4365eac,
         type: 3}
       propertyPath: soundVolume
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3188608365463773515, guid: 58397f1b855a08845934549db4365eac,
         type: 3}
@@ -75897,7 +75997,7 @@ PrefabInstance:
     - target: {fileID: 692572987344716902, guid: 58397f1b855a08845934549db4365eac,
         type: 3}
       propertyPath: soundVolume
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 692572987344716902, guid: 58397f1b855a08845934549db4365eac,
         type: 3}
@@ -75942,7 +76042,7 @@ PrefabInstance:
     - target: {fileID: 818201698936710897, guid: 58397f1b855a08845934549db4365eac,
         type: 3}
       propertyPath: soundVolume
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 818201698936710897, guid: 58397f1b855a08845934549db4365eac,
         type: 3}
