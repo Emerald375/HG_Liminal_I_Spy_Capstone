@@ -77,7 +77,7 @@ public class HintControlsMenus : MonoBehaviour
 
                     if (voiceoverPlayed == false)
                     {
-                        voiceover.PlayHintVoiceover();
+                        StartCoroutine(voiceover.PlayHintVoiceover());
                         voiceoverPlayed = true;
                     }
                 }

@@ -19,6 +19,11 @@ public class ChecklistItem : MonoBehaviour
 
     public WinScreen winScreen;
 
+    void Start()
+    {
+        checklistText.text = propName;
+    }
+
     public void MarkAsFound()
     {
         if(isFound == true)
