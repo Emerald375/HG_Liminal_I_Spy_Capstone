@@ -6,10 +6,10 @@ using UnityEngine.UI;
 public class TimerManager : MonoBehaviour
 {
 
-    private float currentTime = 1f;
+    public float currentTime = 1f;
     public Text timerText;
 
-    private bool isTimerRunning = false;
+    public bool isTimerRunning = false;
 
     public Text countdownText;
 

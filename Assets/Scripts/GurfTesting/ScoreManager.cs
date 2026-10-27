@@ -7,7 +7,7 @@ public class ScoreManager : MonoBehaviour
 {
     [Header("Score")]
     [SerializeField] private Text scoreText;
-    private int score = 0;
+    public int score = 0;
 
     [Header("Multiplier")]
     [SerializeField] private float multiplierMaxTime = 5f;

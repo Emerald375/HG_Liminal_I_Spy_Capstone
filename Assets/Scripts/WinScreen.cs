@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.UI;
 
 public class WinScreen : MonoBehaviour
 {
@@ -13,6 +15,12 @@ public class WinScreen : MonoBehaviour
 
     public Voiceover voiceover;
     private bool winVoiceover = false;
+
+    [Header("Win Screen Stats")] 
+    public ScoreManager scoreManager;
+    public TimerManager timerManager;
+    public Text scoreText;
+    public Text timeText;
 
     void Start()
     {
@@ -36,6 +44,15 @@ public class WinScreen : MonoBehaviour
 
     public void ActivateWinScreen()
     {
+        timerManager.isTimerRunning = false;
+        scoreText.text = scoreManager.score.ToString();
+        timeText.text = timerManager.currentTime.ToString();
+
+        int minutes = Mathf.FloorToInt(timerManager.currentTime / 60);
+        int seconds = Mathf.FloorToInt(timerManager.currentTime % 60);
+
+        timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+
         winScreen.gameObject.SetActive(true);
         gameEnded = true;
         if (winVoiceover == false)
