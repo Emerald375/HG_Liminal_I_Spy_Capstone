@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
+using UnityEngine.Analytics;
 using UnityEngine.UI;
 
 public class Voiceover : MonoBehaviour
@@ -27,6 +28,8 @@ public class Voiceover : MonoBehaviour
     public bool enablePCControls = true;
     public bool primaryIndexTrigger = true;
     public bool secondaryIndexTrigger = true;
+
+    public MenuController menuController;
 
     void Start()
     {
@@ -60,23 +63,35 @@ public class Voiceover : MonoBehaviour
             subtitleBox.SetActive(true);
             textBox.GetComponent<Text>().text = "Welcome to YouSpy. Recentre your mind as you search the room for the items listed on your checklist.";
             yield return new WaitForSeconds(6.5f);
+
+            if (menuController.gameStarted == false)
+            {
+                textBox.GetComponent<Text>().text = "";
+                subtitleBox.SetActive(false);
+            }
         }
+    }
+
+    public IEnumerator PlayStartVoiceover()
+    {
         if (muted == false)
         {
+            yield return new WaitForSeconds(2f);
+
+            subtitleBox.SetActive(true);
             audioSource.PlayOneShot(instructionsVoiceover, 1);
             textBox.GetComponent<Text>().text = "Earn a higher score by finding items in rapid succession. Don’t forget to open and rummage through the draws, you never know what might find in those.";
-            yield return new WaitForSeconds(9f);
-        }
-        if (muted == false)
-        {
+            yield return new WaitForSeconds(8.5f);
+
             audioSource.PlayOneShot(controlsVoiceover, 1);
             textBox.GetComponent<Text>().text = "If you’re not sure what buttons to press, press the ‘Start’ button on your left-hand controller to toggle on the button map menu.";
             yield return new WaitForSeconds(6f);
+
+            textBox.GetComponent<Text>().text = "";
+            subtitleBox.SetActive(false);
         }
-        textBox.GetComponent<Text>().text = "";
-        subtitleBox.SetActive(false);
     }
-    
+
     public IEnumerator PlayHintVoiceover()
     {
         if (muted == false)

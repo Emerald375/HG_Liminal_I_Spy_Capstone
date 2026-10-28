@@ -17,7 +17,7 @@ public class TimerManager : MonoBehaviour
     public GameObject teleportSpots;
 
     public GameObject countdownCanvas;
-
+    public Voiceover voiceover;
 
     void Start()
     {
@@ -65,6 +65,7 @@ public class TimerManager : MonoBehaviour
         countdownText.gameObject.SetActive(false);
         EnableGameplay();
         StartTimer();
+        StartCoroutine(voiceover.PlayStartVoiceover());
     }
 
     public void StartCountdown()
