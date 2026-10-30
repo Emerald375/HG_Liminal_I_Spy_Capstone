@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ObjectRandomiser : MonoBehaviour
+public class ListRandomiser : MonoBehaviour
 {
 
     [SerializeField] private Transform objectsToFind;
@@ -15,6 +15,8 @@ public class ObjectRandomiser : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("ListRandomiser has started");
+
         for(int checklistIndex = 0; checklistIndex < checklistTexts.Length; checklistIndex += 1)
         {
             checklistTexts[checklistIndex].gameObject.SetActive(false);
@@ -25,6 +27,7 @@ public class ObjectRandomiser : MonoBehaviour
             FindableObject findableObject = objectsToFind.GetChild(childIndex).GetComponent<FindableObject>();
             findableObjectList.Add(findableObject);
         }
+        Debug.Log("Objects found: " + findableObjectList.Count);
         
         for(int objectIndex = 0; objectIndex < findableObjectList.Count; objectIndex += 1)
         {
@@ -32,6 +35,8 @@ public class ObjectRandomiser : MonoBehaviour
         }
 
         List<FindableObject> availableObjects = new List<FindableObject>(findableObjectList);
+
+        Debug.Log("Available objects: " + availableObjects.Count);
 
         for(int selectionIndex = 0; selectionIndex < objectsToSelect; selectionIndex += 1)
         {
