@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3402879717339884434}
   - component: {fileID: 3402879717339884432}
   - component: {fileID: 3402879717339884433}
+  - component: {fileID: 1123743655}
   m_Layer: 0
   m_Name: Koi Fish Book
   m_TagString: Untagged
@@ -30,13 +31,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3402879717339884439}
-  m_LocalRotation: {x: -0.48355567, y: -0.54798293, z: -0.56296116, w: 0.3859578}
+  m_LocalRotation: {x: -0.48355815, y: -0.54797995, z: -0.5629575, w: 0.3859642}
   m_LocalPosition: {x: 0.42840838, y: -0.4167453, z: -7.633264}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -98.006996, y: -60.674988, z: -43.224976}
 --- !u!23 &3402879717339884393
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -111,7 +112,7 @@ MonoBehaviour:
   disableDestroyDelay: 3
   selectionSound: {fileID: 8300000, guid: 8d7f89f889a2b85459abd0f5a91185ac, type: 3}
   audioSource: {fileID: 0}
-  soundVolume: 10
+  soundVolume: 1
   points: 1
   onSelected:
     m_PersistentCalls:
@@ -197,6 +198,7 @@ MonoBehaviour:
   hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   indexTriggerColor: {r: 0, g: 1, b: 0, a: 1}
   handTriggerColor: {r: 0, g: 0, b: 1, a: 1}
+  menuController: {fileID: 0}
 --- !u!114 &3402879717339884432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,7 +215,7 @@ MonoBehaviour:
   checklistText: {fileID: 0}
   scribbleSound: {fileID: 8300000, guid: bf76108c7b261434daf0e43d33d0ec74, type: 3}
   audioSource: {fileID: 0}
-  soundVolume: 10
+  soundVolume: 1
   winScreen: {fileID: 0}
 --- !u!65 &3402879717339884433
 BoxCollider:
@@ -228,3 +230,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.22128028, y: 0.3451617, z: 0.08841876}
   m_Center: {x: -0.004236952, y: 0.15483016, z: -0.001282772}
+--- !u!114 &1123743655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3402879717339884439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9ad3d655949f77468445aca06f042ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

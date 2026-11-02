@@ -108,6 +108,7 @@ public class Voiceover : MonoBehaviour
     {
         if (muted == false)
         {
+            yield return new WaitForSeconds(1f);
             audioSource.PlayOneShot(victoryVoiceover, 1);
             subtitleBox.SetActive(true);
             textBox.GetComponent<Text>().text = "Congratulations, you found everything. Try again to see if you can beat your score and time. Although, you won’t find everything in the same places as last time.";

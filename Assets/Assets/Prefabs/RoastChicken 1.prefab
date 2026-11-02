@@ -16,12 +16,13 @@ GameObject:
   - component: {fileID: 7904573790251360149}
   - component: {fileID: 7904573790251360148}
   - component: {fileID: 7904573790251360147}
+  - component: {fileID: 1895911647}
   m_Layer: 0
   m_Name: RoastChicken 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &4383407015102976709
 Transform:
@@ -30,7 +31,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7904573790251360146}
-  m_LocalRotation: {x: -0.047185138, y: 0.70553076, z: -0.047185138, w: -0.70553076}
+  m_LocalRotation: {x: 0.047182884, y: -0.7055309, z: 0.047182884, w: 0.7055309}
   m_LocalPosition: {x: 0.8874663, y: -0.33437753, z: 2.3505535}
   m_LocalScale: {x: 1.183351, y: 1.4409885, z: 1.4225391}
   m_Children:
@@ -44,7 +45,7 @@ Transform:
   - {fileID: 8442443252094353721}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 7.6520004, y: -90.00001, z: 0}
 --- !u!33 &1061335865394372228
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -119,7 +120,7 @@ MonoBehaviour:
   disableDestroyDelay: 3
   selectionSound: {fileID: 8300000, guid: 8d7f89f889a2b85459abd0f5a91185ac, type: 3}
   audioSource: {fileID: 0}
-  soundVolume: 10
+  soundVolume: 1
   points: 1
   onSelected:
     m_PersistentCalls:
@@ -187,6 +188,7 @@ MonoBehaviour:
   hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   indexTriggerColor: {r: 0, g: 1, b: 0, a: 1}
   handTriggerColor: {r: 0, g: 0, b: 1, a: 1}
+  menuController: {fileID: 0}
 --- !u!114 &7904573790251360149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,7 +223,7 @@ MonoBehaviour:
   checklistText: {fileID: 0}
   scribbleSound: {fileID: 8300000, guid: bf76108c7b261434daf0e43d33d0ec74, type: 3}
   audioSource: {fileID: 0}
-  soundVolume: 10
+  soundVolume: 1
   winScreen: {fileID: 0}
 --- !u!65 &7904573790251360147
 BoxCollider:
@@ -236,6 +238,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.52661556, y: 0.19971885, z: 0.7312236}
   m_Center: {x: 0, y: 0, z: 0.03}
+--- !u!114 &1895911647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7904573790251360146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9ad3d655949f77468445aca06f042ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8877406671922291367
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,7 +266,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &4488469875127256985
 Transform:

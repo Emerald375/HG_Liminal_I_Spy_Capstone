@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2023559261389677234}
   - component: {fileID: 2023559261389677135}
   - component: {fileID: 2023559261389677233}
+  - component: {fileID: 1337344763}
   m_Layer: 0
   m_Name: Toilet
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2023559262031076785}
-  m_LocalRotation: {x: -0, y: 0.28097406, z: -0, w: 0.9597154}
+  m_LocalRotation: {x: 0, y: 0.2809766, z: 0, w: 0.95971465}
   m_LocalPosition: {x: 2.5963, y: 1.3506, z: 2.5993}
   m_LocalScale: {x: 0.20485, y: 0.20485, z: 0.20485}
   m_Children: []
@@ -124,7 +125,7 @@ MonoBehaviour:
   disableDestroyDelay: 3
   selectionSound: {fileID: 8300000, guid: 8d7f89f889a2b85459abd0f5a91185ac, type: 3}
   audioSource: {fileID: 0}
-  soundVolume: 10
+  soundVolume: 1
   points: 1
   onSelected:
     m_PersistentCalls:
@@ -192,6 +193,7 @@ MonoBehaviour:
   hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   indexTriggerColor: {r: 0, g: 1, b: 0, a: 1}
   handTriggerColor: {r: 0, g: 0, b: 1, a: 1}
+  menuController: {fileID: 0}
 --- !u!114 &2023559261389677135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,5 +228,17 @@ MonoBehaviour:
   checklistText: {fileID: 0}
   scribbleSound: {fileID: 8300000, guid: bf76108c7b261434daf0e43d33d0ec74, type: 3}
   audioSource: {fileID: 0}
-  soundVolume: 10
+  soundVolume: 1
   winScreen: {fileID: 0}
+--- !u!114 &1337344763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2023559262031076785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9ad3d655949f77468445aca06f042ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

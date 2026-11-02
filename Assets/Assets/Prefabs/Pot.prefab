@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1745153829048416414}
   - component: {fileID: 1745153829048416403}
   - component: {fileID: 1745153829048416415}
+  - component: {fileID: 1858391702}
   m_Layer: 0
   m_Name: Pot
   m_TagString: Untagged
@@ -229,3 +230,15 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   soundVolume: 1
   winScreen: {fileID: 0}
+--- !u!114 &1858391702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745153829048416407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9ad3d655949f77468445aca06f042ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

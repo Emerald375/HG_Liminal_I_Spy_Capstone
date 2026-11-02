@@ -18,6 +18,9 @@ public class TimerManager : MonoBehaviour
 
     public GameObject countdownCanvas;
     public Voiceover voiceover;
+    public AudioSource audioSource;
+
+    public AudioClip countdownAudio;
 
     void Start()
     {
@@ -50,6 +53,8 @@ public class TimerManager : MonoBehaviour
 
     IEnumerator Countdown()
     {
+        audioSource.PlayOneShot(countdownAudio, 1);
+
         countdownText.text = "3";
         yield return new WaitForSeconds(1);
 

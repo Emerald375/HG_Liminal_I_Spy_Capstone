@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6374356176133021172}
   - component: {fileID: 6374356176133021175}
   - component: {fileID: 6374356176133021174}
+  - component: {fileID: 148822350}
   m_Layer: 0
   m_Name: ComicCollection
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6374356176133021170}
-  m_LocalRotation: {x: -0, y: -0.08820493, z: -0, w: 0.99610233}
+  m_LocalRotation: {x: 0, y: -0.088207625, z: 0, w: 0.9961021}
   m_LocalPosition: {x: -0.7, y: 1.6942546, z: -5.953}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -161,7 +162,7 @@ MonoBehaviour:
   disableDestroyDelay: 3
   selectionSound: {fileID: 8300000, guid: 8d7f89f889a2b85459abd0f5a91185ac, type: 3}
   audioSource: {fileID: 0}
-  soundVolume: 10
+  soundVolume: 1
   points: 1
   onSelected:
     m_PersistentCalls:
@@ -229,6 +230,7 @@ MonoBehaviour:
   hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   indexTriggerColor: {r: 0, g: 1, b: 0, a: 1}
   handTriggerColor: {r: 0, g: 0, b: 1, a: 1}
+  menuController: {fileID: 0}
 --- !u!114 &6374356176133021175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,8 +265,20 @@ MonoBehaviour:
   checklistText: {fileID: 0}
   scribbleSound: {fileID: 8300000, guid: bf76108c7b261434daf0e43d33d0ec74, type: 3}
   audioSource: {fileID: 0}
-  soundVolume: 10
+  soundVolume: 1
   winScreen: {fileID: 0}
+--- !u!114 &148822350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6374356176133021170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9ad3d655949f77468445aca06f042ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6374356174614101968
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1071,22 +1085,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 33.018
       objectReference: {fileID: 0}
-    - target: {fileID: 1030992335, guid: abc00000000003906270597115057518, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1030992339, guid: abc00000000003906270597115057518, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1030992343, guid: abc00000000003906270597115057518, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1030992347, guid: abc00000000003906270597115057518, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1030992336, guid: abc00000000003906270597115057518, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.00000020861626
@@ -1116,6 +1114,10 @@ PrefabInstance:
       value: -0.001482747
       objectReference: {fileID: 0}
     - target: {fileID: 1030992336, guid: abc00000000003906270597115057518, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -0.558
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030992336, guid: abc00000000003906270597115057518, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 1.189
       objectReference: {fileID: 0}
@@ -1123,9 +1125,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 50.307003
       objectReference: {fileID: 0}
-    - target: {fileID: 1030992336, guid: abc00000000003906270597115057518, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -0.558
+    - target: {fileID: 1030992335, guid: abc00000000003906270597115057518, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030992339, guid: abc00000000003906270597115057518, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030992343, guid: abc00000000003906270597115057518, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030992347, guid: abc00000000003906270597115057518, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abc00000000003906270597115057518, type: 3}

@@ -71,8 +71,6 @@ public class HighlightObject : MonoBehaviour
                     }
                 }
             }
-
-            
         }
         else
         {

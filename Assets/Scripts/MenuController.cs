@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class MenuController : MonoBehaviour
 {
 
@@ -7,9 +8,13 @@ public class MenuController : MonoBehaviour
     [SerializeField] private TimerManager timerManager;
 
     public bool gameStarted = false;
+    private bool startPressed = false;
 
     private float countdownTimer = 3f;
     private bool countdownRunning = false;
+
+    public AudioSource audioSource;
+    public AudioClip buttonAudio;
 
     private void Start()
     {
@@ -19,9 +24,13 @@ public class MenuController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) || OVRInput.GetDown(OVRInput.RawButton.B))
+        if (startPressed == false)
         {
-            StartGame();
+            if (Input.GetKeyDown(KeyCode.Space) || OVRInput.GetDown(OVRInput.RawButton.B))
+            {
+                StartGame();
+                startPressed = true;
+            }
         }
 
         if (countdownRunning != true)
@@ -55,6 +64,11 @@ public class MenuController : MonoBehaviour
         MainMenu.SetActive(false);
         timerManager.StartCountdown();
         countdownRunning = true;
+        audioSource.PlayOneShot(buttonAudio, 1);
     }
 
+    public void PlayUIButtonAudio()
+    {
+        audioSource.PlayOneShot(buttonAudio, 1);
+    }
 }

@@ -22,6 +22,9 @@ public class WinScreen : MonoBehaviour
     public Text scoreText;
     public Text timeText;
 
+    public AudioSource audioSource;
+    public AudioClip winAudio;
+
     void Start()
     {
         winScreen.gameObject.SetActive(false);
@@ -57,6 +60,7 @@ public class WinScreen : MonoBehaviour
         gameEnded = true;
         if (winVoiceover == false)
         {
+            audioSource.PlayOneShot(winAudio, 1);
             StartCoroutine(voiceover.PlayVictoryVoiceover());
             winVoiceover = true;
         }
