@@ -15,6 +15,7 @@ public class MenuController : MonoBehaviour
 
     public AudioSource audioSource;
     public AudioClip buttonAudio;
+    public float soundVolume = 10f;
 
     private void Start()
     {

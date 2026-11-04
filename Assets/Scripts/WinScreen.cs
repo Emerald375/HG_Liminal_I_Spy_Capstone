@@ -24,6 +24,7 @@ public class WinScreen : MonoBehaviour
 
     public AudioSource audioSource;
     public AudioClip winAudio;
+    public float soundVolume = 10f;
 
     void Start()
     {
