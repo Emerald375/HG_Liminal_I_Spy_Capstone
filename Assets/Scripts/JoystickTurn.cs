@@ -20,8 +20,8 @@ public class JoystickTurn : MonoBehaviour
         if (joysticksEnabled == false) return;
         
         float rightStick = OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick).x;
-        float leftStick = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick).x;
-        float turnInput = rightStick + leftStick;
+        //float leftStick = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick).x;
+        float turnInput = rightStick; //+ leftStick;
         turnInput = Mathf.Clamp(turnInput, -1f, 1f);
 
         if (Mathf.Abs(turnInput) < deadzone)
