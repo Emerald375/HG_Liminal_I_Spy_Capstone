@@ -165,6 +165,10 @@ public class HintControlsMenus : MonoBehaviour
         Debug.Log("Picked: " + randomItem.name);
 
         currentObjectMeshRenderer = randomItem.GetComponent<MeshRenderer>();
+        if (currentObjectMeshRenderer == null)
+        {
+            currentObjectMeshRenderer = randomItem.GetComponentInChildren<MeshRenderer>();
+        }
         originalMaterial = currentObjectMeshRenderer.material; //save original material
         currentObjectMeshRenderer.material = glowMaterial; // change to glow material
 
