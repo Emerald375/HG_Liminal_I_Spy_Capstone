@@ -132,10 +132,12 @@ public class HintControlsMenus : MonoBehaviour
             }
             else
             {
-                currentObjectMeshRenderer.material = originalMaterial; // change back to original material
                 glowTimerRunning = false;
+                if (currentObjectMeshRenderer == null) return;
+                currentObjectMeshRenderer.material = originalMaterial; // change back to original material if not found
             }
         }
+        //Debug.Log("glowTimer(cooldown): " + glowTimer);
     }
     public void HintRequested()
     {
