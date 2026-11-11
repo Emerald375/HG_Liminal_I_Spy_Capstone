@@ -9,6 +9,8 @@ public class ListRandomiser : MonoBehaviour
     [SerializeField] private Transform objectsToFind;
     [SerializeField] private int objectsToSelect = 3;
     private List<FindableObject> findableObjectList = new List<FindableObject>();
+    private List<FindableObject> activeObjects = new List<FindableObject>();
+    private List<FindableObject> waitingObjects = new List<FindableObject>();
     
     [SerializeField] private Text[] checklistTexts;
 
@@ -42,18 +44,73 @@ public class ListRandomiser : MonoBehaviour
         {
             int randomIndex = Random.Range(0, availableObjects.Count);
             FindableObject selectedObject = availableObjects[randomIndex]; 
-            Debug.Log("Selected Object: " + selectedObject.name);
-            selectedObject.SetFindable(true);
 
-            ChecklistItem checklistItem = selectedObject.GetComponent<ChecklistItem>();
-            checklistItem.checklistText = checklistTexts[selectionIndex];
-            checklistTexts[selectionIndex].gameObject.SetActive(true);
-            checklistTexts[selectionIndex].text = checklistItem.propName;
+            
+            Debug.Log("Selected Object: " + selectedObject.name);
+
+            if(selectionIndex < checklistTexts.Length)
+            {
+                activeObjects.Add(selectedObject);
+                selectedObject.SetFindable(true);
+            }
+            else
+            {
+                waitingObjects.Add(selectedObject);
+                selectedObject.SetFindable(false);
+            }
+
 
             availableObjects.Remove(selectedObject);
         }
 
+        UpdateChecklist();
     }
+
+    private void UpdateChecklist()
+    {
+        for(int objectIndex = 0; objectIndex < activeObjects.Count; objectIndex += 1)
+        {
+            FindableObject selectedObject = activeObjects[objectIndex];
+
+            if(selectedObject == null) continue;
+
+            ChecklistItem checklistItem = selectedObject.GetComponent<ChecklistItem>();
+
+            checklistItem.listRandomiser = this;
+            checklistItem.checklistText = checklistTexts[objectIndex];
+            checklistTexts[objectIndex].text = checklistItem.propName;
+            checklistTexts[objectIndex].gameObject.SetActive(true);
+        }
+    }
+
+    public void ObjectFound(FindableObject foundObject)
+    {
+        int foundIndex = activeObjects.IndexOf(foundObject);
+
+        Debug.Log("Object found: " + foundObject.name);
+        Debug.Log("Found index: " + foundIndex);
+        Debug.Log("Waiting objects: " + waitingObjects.Count);
+
+        if(waitingObjects.Count > 0)
+        {
+            FindableObject nextObject = waitingObjects[0];
+
+            activeObjects[foundIndex] = nextObject;
+            waitingObjects.RemoveAt(0);
+
+            nextObject.SetFindable(true);
+            
+
+            UpdateChecklist();
+        }
+        else
+        {
+            activeObjects[foundIndex] = null;
+            checklistTexts[foundIndex].text = "";
+            checklistTexts[foundIndex].gameObject.SetActive(false);
+        }
+    }
+    
 
 
 }

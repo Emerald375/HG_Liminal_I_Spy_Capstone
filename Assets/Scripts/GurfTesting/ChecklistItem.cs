@@ -19,9 +19,11 @@ public class ChecklistItem : MonoBehaviour
 
     public WinScreen winScreen;
 
+    public ListRandomiser listRandomiser;
+
     void Start()
     {
-        checklistText.text = propName;
+        // checklistText.text = propName; 
     }
 
     public void MarkAsFound()
@@ -32,7 +34,9 @@ public class ChecklistItem : MonoBehaviour
         }
 
         isFound = true;
-        checklistText.text = "[X] " + propName;
+        //checklistText.text = "[X] " + propName;
+
+        listRandomiser.ObjectFound(GetComponent<FindableObject>());
         
         PlayScribbleSound();
         winScreen.ItemsFoundCounter();
