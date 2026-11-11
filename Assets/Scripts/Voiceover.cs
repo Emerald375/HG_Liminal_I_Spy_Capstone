@@ -64,11 +64,16 @@ public class Voiceover : MonoBehaviour
             textBox.GetComponent<Text>().text = "Welcome to YouSpy. Recentre your mind as you search the room for the items listed on your checklist.";
             yield return new WaitForSeconds(6.5f);
 
-            if (menuController.gameStarted == false)
-            {
-                textBox.GetComponent<Text>().text = "";
-                subtitleBox.SetActive(false);
-            }
+            textBox.GetComponent<Text>().text = "";
+            subtitleBox.SetActive(false);
+            yield return new WaitForSeconds(0.5f);
+
+            menuController.StartGame();
+        }
+        else if (muted == true)
+        {
+            yield return new WaitForSeconds(1f);
+            menuController.StartGame();
         }
     }
 

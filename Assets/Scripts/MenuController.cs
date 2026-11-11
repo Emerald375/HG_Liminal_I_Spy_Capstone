@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class MenuController : MonoBehaviour
@@ -25,14 +26,14 @@ public class MenuController : MonoBehaviour
 
     private void Update()
     {
-        if (startPressed == false)
+        /*if (startPressed == false)
         {
             if (Input.GetKeyDown(KeyCode.Space) || OVRInput.GetDown(OVRInput.RawButton.B))
             {
                 StartGame();
                 startPressed = true;
             }
-        }
+        }*/
 
         if (countdownRunning != true)
         {

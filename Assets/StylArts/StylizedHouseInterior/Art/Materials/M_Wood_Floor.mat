@@ -196,7 +196,7 @@ Material:
     - Color_109fbee90a4f433faa7dddf674688df9: {r: 0.754717, g: 0.5964097, b: 0.4521182,
         a: 0}
     - Color_91233a34c0ca401bad93f6030e558b35: {r: 0, g: 0, b: 0, a: 0}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.7924528, g: 0.7924528, b: 0.7924528, a: 1}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &4748543639869806021
