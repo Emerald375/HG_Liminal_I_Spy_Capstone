@@ -9,8 +9,6 @@ public class FindableObject : MonoBehaviour
     [SerializeField] private SelectObject selectObject;
     [SerializeField] private ChecklistItem checklistItem;
     [SerializeField] private Outline outline;*/
-
-    [SerializeField] private ObjectSpawner spawner;
     public void SetFindable(bool findable)
     {
         /*highlightObject.enabled = findable;
@@ -29,11 +27,5 @@ public class FindableObject : MonoBehaviour
     void Update()
     {
         
-    }
-
-    public void MoveObject()
-    {
-        spawner.SpawnObject();
-        Debug.Log("Findable Objects Script");
     }
 }

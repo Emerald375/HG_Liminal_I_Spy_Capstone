@@ -60,9 +60,6 @@ public class ListRandomiser : MonoBehaviour
                 selectedObject.SetFindable(false);
             }
 
-            selectedObject.MoveObject();
-            Debug.Log("ListRand Script: Start");
-
             availableObjects.Remove(selectedObject);
         }
 
@@ -102,8 +99,6 @@ public class ListRandomiser : MonoBehaviour
             waitingObjects.RemoveAt(0);
 
             nextObject.SetFindable(true);
-            nextObject.MoveObject();
-            Debug.Log("ListRand Script: ObjectFound");
 
             UpdateChecklist();
         }

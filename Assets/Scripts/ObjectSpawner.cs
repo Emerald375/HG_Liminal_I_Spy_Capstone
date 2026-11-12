@@ -7,12 +7,12 @@ public class ObjectSpawner : MonoBehaviour
     [SerializeField] private GameObject thisObject;
     [SerializeField] private Transform[] spawnPoints;
 
-    private void Update()
+    private void Start()
     {
-        //SpawnObject();
+        RandomiseObjectPosition();
     }
 
-    public void SpawnObject()
+    public void RandomiseObjectPosition()
     {
         int randomSP = Random.Range(0, spawnPoints.Length); //Get random spawn point loaction
         Transform spawnPoint = spawnPoints[randomSP];
@@ -20,6 +20,6 @@ public class ObjectSpawner : MonoBehaviour
         transform.position = spawnPoint.position;
         transform.rotation = spawnPoint.rotation;
 
-        Debug.Log("Object Spawned: " + thisObject);
+        //Debug.Log("Object Spawned: " + thisObject);
     }
 }
