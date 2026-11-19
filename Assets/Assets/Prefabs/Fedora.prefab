@@ -23,7 +23,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 1
   m_IsActive: 1
 --- !u!4 &6309283495434574348
 Transform:
@@ -112,7 +112,7 @@ MonoBehaviour:
   controllerTransform: {fileID: 0}
   highlightLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   outline: {fileID: 563637629427664288}
   hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   indexTriggerColor: {r: 0, g: 1, b: 0, a: 1}
@@ -229,7 +229,7 @@ MonoBehaviour:
   checklistText: {fileID: 0}
   scribbleSound: {fileID: 8300000, guid: bf76108c7b261434daf0e43d33d0ec74, type: 3}
   audioSource: {fileID: 0}
-  soundVolume: 10
+  soundVolume: 1
   winScreen: {fileID: 0}
   listRandomiser: {fileID: 0}
 --- !u!114 &563637629427664319

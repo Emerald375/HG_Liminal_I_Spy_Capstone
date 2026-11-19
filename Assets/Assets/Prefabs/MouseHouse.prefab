@@ -1377,11 +1377,7 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 5.361861
       objectReference: {fileID: 0}
-    - target: {fileID: 1030985416, guid: abc00000000012577080101605134664, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1030985420, guid: abc00000000012577080101605134664, type: 3}
+    - target: {fileID: 1030985412, guid: abc00000000012577080101605134664, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
@@ -1389,7 +1385,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1030985412, guid: abc00000000012577080101605134664, type: 3}
+    - target: {fileID: 1030985420, guid: abc00000000012577080101605134664, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030985416, guid: abc00000000012577080101605134664, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
@@ -1472,19 +1472,19 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.077
       objectReference: {fileID: 0}
-    - target: {fileID: 1030986689, guid: abc00000000009614564108420839902, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1030986693, guid: abc00000000009614564108420839902, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1030986681, guid: abc00000000009614564108420839902, type: 3}
+    - target: {fileID: 1030986689, guid: abc00000000009614564108420839902, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1030986685, guid: abc00000000009614564108420839902, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030986681, guid: abc00000000009614564108420839902, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
@@ -1567,11 +1567,7 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.07947061
       objectReference: {fileID: 0}
-    - target: {fileID: 1030986561, guid: abc00000000002223016432056108006, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1030986565, guid: abc00000000002223016432056108006, type: 3}
+    - target: {fileID: 1030986573, guid: abc00000000002223016432056108006, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
@@ -1579,7 +1575,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1030986573, guid: abc00000000002223016432056108006, type: 3}
+    - target: {fileID: 1030986565, guid: abc00000000002223016432056108006, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030986561, guid: abc00000000002223016432056108006, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
@@ -1840,19 +1840,19 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.1
       objectReference: {fileID: 0}
-    - target: {fileID: 1030991042, guid: abc00000000000137113071870137926, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1030991046, guid: abc00000000000137113071870137926, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1030991034, guid: abc00000000000137113071870137926, type: 3}
+    - target: {fileID: 1030991042, guid: abc00000000000137113071870137926, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1030991038, guid: abc00000000000137113071870137926, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030991034, guid: abc00000000000137113071870137926, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
