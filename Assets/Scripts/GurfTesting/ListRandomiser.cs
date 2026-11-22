@@ -17,6 +17,10 @@ public class ListRandomiser : MonoBehaviour
     [SerializeField] private float growDuration = 0.5f;
     [SerializeField] private float maxAnimationDeltaTime = 0.05f;
 
+    private float fadeDuration = 1.5f;
+    private float finalOpacity = 0.3f;
+
+
 
     private void Start()
     {
@@ -94,7 +98,7 @@ public class ListRandomiser : MonoBehaviour
 
         if(waitingObjects.Count > 0)
         {
-            FindableObject nextObject = waitingObjects[0];
+            /*FindableObject nextObject = waitingObjects[0];
 
             activeObjects[foundIndex] = nextObject;
             waitingObjects.RemoveAt(0);
@@ -103,14 +107,72 @@ public class ListRandomiser : MonoBehaviour
 
             UpdateChecklist();
             ObjectsVisable();
+            */
+
+            FindableObject nextObject = waitingObjects[0];
+            waitingObjects.RemoveAt(0);
+
+            StartCoroutine(ReplaceChecklistItem(foundIndex, nextObject));
+            
         }
         else
         {
             activeObjects[foundIndex] = null;
-            checklistTexts[foundIndex].text = "";
-            checklistTexts[foundIndex].gameObject.SetActive(false);
+            StartCoroutine(FadeText(foundIndex, finalOpacity));
+            //checklistTexts[foundIndex].text = "";
+            //checklistTexts[foundIndex].gameObject.SetActive(false);
         }
     }
+
+    private IEnumerator FadeText(int checklistIndex, float targetOpacity)
+    {
+        Text currentText = checklistTexts[checklistIndex];
+
+        float startingOpacity = currentText.color.a;
+        float elapsed = 0f;
+
+        while(elapsed < fadeDuration)
+        {
+            elapsed = elapsed + Time.deltaTime;
+
+            float percentage = Mathf.Clamp01(elapsed / fadeDuration);
+
+            float newOpacity = Mathf.Lerp(startingOpacity,targetOpacity,percentage);
+
+            Color textColor = currentText.color;
+            textColor.a = newOpacity;
+            currentText.color = textColor;
+
+            yield return null;
+        }
+
+        Color finalColor = currentText.color;
+        finalColor.a = targetOpacity;
+        currentText.color = finalColor;
+    }
+
+
+    private IEnumerator ReplaceChecklistItem(int checklistIndex, FindableObject nextObject)
+    {
+        yield return StartCoroutine(FadeText(checklistIndex, 0f));
+
+        activeObjects[checklistIndex] = nextObject;
+
+        nextObject.SetFindable(true);
+
+        UpdateChecklist();
+        
+
+        Color textColor = checklistTexts[checklistIndex].color;
+        textColor.a = 1f;
+        checklistTexts[checklistIndex].color = textColor;
+
+        ObjectsVisable();
+    }
+
+
+
+
     
     public void ObjectsVisable()
     {
