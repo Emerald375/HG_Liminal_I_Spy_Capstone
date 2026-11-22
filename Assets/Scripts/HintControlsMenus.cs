@@ -20,8 +20,9 @@ public class HintControlsMenus : MonoBehaviour
 
     public Transform objectsToFind;
     public Material glowMaterial;
-    private Material originalMaterial;
-    private MeshRenderer currentObjectMeshRenderer;
+    //private Material originalMaterial;
+    //private MeshRenderer currentObjectMeshRenderer;
+    private Dictionary<MeshRenderer, Material[]> originalMaterials = new Dictionary<MeshRenderer, Material[]>();
 
     private float glowTimer;
     private bool glowTimerRunning = false;
@@ -133,9 +134,22 @@ public class HintControlsMenus : MonoBehaviour
             else
             {
                 glowTimerRunning = false;
+
+                foreach (var entry in originalMaterials) // Restore all original materials
+                {
+                    if (entry.Key != null)
+                    {
+                        entry.Key.sharedMaterials = entry.Value;
+                    }
+                }
+                originalMaterials.Clear();
+            }
+            /*else
+            {
+                glowTimerRunning = false;
                 if (currentObjectMeshRenderer == null) return;
                 currentObjectMeshRenderer.material = originalMaterial; // change back to original material if not found
-            }
+            }*/
         }
         //Debug.Log("glowTimer(cooldown): " + glowTimer);
     }
@@ -161,21 +175,76 @@ public class HintControlsMenus : MonoBehaviour
     {
         if (objectsToFind.childCount == 0) return;
 
-        int randomIndex = Random.Range(0, objectsToFind.childCount);
-        GameObject randomItem = objectsToFind.GetChild(randomIndex).gameObject;
+        if (glowTimerRunning)
+        {
+            RestoreOriginalMaterials();
+        }
+
+        List<GameObject> visibleObjects = new List<GameObject>();
+
+        for (int i = 0; i < objectsToFind.childCount; i++)
+        {
+            GameObject obj = objectsToFind.GetChild(i).gameObject;
+
+            if (obj.activeInHierarchy)
+            {
+                MeshRenderer[] renderers = obj.GetComponentsInChildren<MeshRenderer>();
+
+                if (renderers.Length > 0)
+                {
+                    visibleObjects.Add(obj);
+                }
+            }
+        }
+
+        if (visibleObjects.Count == 0) return;
+
+        int randomIndex = Random.Range(0, visibleObjects.Count); //objectsToFind.childCount);
+        GameObject randomItem = visibleObjects[randomIndex]; //objectsToFind.GetChild(randomIndex).gameObject;
 
         Debug.Log("Picked: " + randomItem.name);
 
-        currentObjectMeshRenderer = randomItem.GetComponent<MeshRenderer>();
-        if (currentObjectMeshRenderer == null)
+        //currentObjectMeshRenderer = randomItem.GetComponent<MeshRenderer>();
+        MeshRenderer[] meshRenderers = randomItem.GetComponentsInChildren<MeshRenderer>();
+
+        foreach (MeshRenderer meshRenderer in meshRenderers)
+        {
+            if (meshRenderer == null) continue;
+
+            originalMaterials[meshRenderer] = meshRenderer.sharedMaterials; //save original material
+
+            Material[] glowMaterials = new Material[meshRenderer.sharedMaterials.Length]; // change to glow material
+
+            for (int i = 0; i < glowMaterials.Length; i++)
+            {
+                glowMaterials[i] = glowMaterial;
+            }
+            meshRenderer.sharedMaterials = glowMaterials;
+        }
+
+        /*if (currentObjectMeshRenderer == null)
         {
             currentObjectMeshRenderer = randomItem.GetComponentInChildren<MeshRenderer>();
         }
         originalMaterial = currentObjectMeshRenderer.material; //save original material
-        currentObjectMeshRenderer.material = glowMaterial; // change to glow material
+        currentObjectMeshRenderer.material = glowMaterial; // change to glow material */
 
         glowTimerRunning = true;
         glowTimer = 15f;
+    }
+
+    private void RestoreOriginalMaterials()
+    {
+        foreach (var entry in originalMaterials)
+        {
+            if (entry.Key != null)
+            {
+                entry.Key.sharedMaterials = entry.Value;
+            }
+        }
+
+        originalMaterials.Clear();
+        glowTimerRunning = false;
     }
 
     private void PlayHintSound()
@@ -285,6 +354,11 @@ public class HintControlsMenus : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C))
         {
             ToggleControlsScreen();
+        }
+
+        if (Input.GetKeyDown(KeyCode.W)) //Debug Controls - u can spam it
+        {
+            HintRequested();
         }
     }
 

@@ -14,6 +14,9 @@ public class ListRandomiser : MonoBehaviour
     
     [SerializeField] private Text[] checklistTexts;
 
+    [SerializeField] private float growDuration = 0.5f;
+    [SerializeField] private float maxAnimationDeltaTime = 0.05f;
+
 
     private void Start()
     {
@@ -52,18 +55,16 @@ public class ListRandomiser : MonoBehaviour
             {
                 activeObjects.Add(selectedObject);
                 selectedObject.SetFindable(true);
-                
             }
             else
             {
                 waitingObjects.Add(selectedObject);
                 selectedObject.SetFindable(false);
             }
-
             availableObjects.Remove(selectedObject);
         }
-
         UpdateChecklist();
+        ObjectsVisable();
     }
 
     private void UpdateChecklist()
@@ -101,6 +102,7 @@ public class ListRandomiser : MonoBehaviour
             nextObject.SetFindable(true);
 
             UpdateChecklist();
+            ObjectsVisable();
         }
         else
         {
@@ -110,6 +112,74 @@ public class ListRandomiser : MonoBehaviour
         }
     }
     
+    public void ObjectsVisable()
+    {
+        for (int i = 0; i < findableObjectList.Count; i++)
+        {
+            FindableObject currentObject = findableObjectList[i];
 
+            if (currentObject == null) continue;
 
+            bool isOnChecklist = activeObjects.Contains(currentObject); // check if object is on checklist
+
+            //currentObject.gameObject.SetActive(isOnChecklist); //enables objects on checklist
+            if (isOnChecklist)
+            {
+                // Only animate if the object was previously inactive
+                if (!currentObject.gameObject.activeSelf)
+                {
+                    currentObject.gameObject.SetActive(true);
+
+                    Vector3 originalScale = currentObject.transform.localScale;
+
+                    StartCoroutine(GrowAnimation(
+                        currentObject.transform,
+                        originalScale
+                    ));
+                }
+            }
+            else
+            {
+                currentObject.gameObject.SetActive(false);
+            }
+        }
+    }
+
+    private IEnumerator GrowAnimation(Transform objectTransform, Vector3 originalScale)
+    {
+        Vector3 startScale = Vector3.zero;
+        float elapsed = 0f;
+
+        objectTransform.localScale = startScale; //start at zero scale
+
+        if (growDuration <= 0f)
+        {
+            objectTransform.localScale = originalScale;
+            yield break;
+        }
+
+        while (elapsed < growDuration)
+        {
+            float frameDelta = Time.deltaTime;
+
+            if (maxAnimationDeltaTime > 0f)
+            {
+                frameDelta = Mathf.Min(frameDelta, maxAnimationDeltaTime);
+            }
+
+            elapsed += frameDelta;
+
+            float percentage = Mathf.Clamp01(elapsed / growDuration);
+
+            objectTransform.localScale = Vector3.Lerp(
+                startScale,
+                originalScale,
+                percentage
+            );
+
+            yield return null;
+        }
+
+        objectTransform.localScale = originalScale;
+    }
 }

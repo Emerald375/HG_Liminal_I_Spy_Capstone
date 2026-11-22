@@ -67,7 +67,8 @@ Shader "Valve/VR/HighlightCustom"
 		float4 MainPS( VertexOutput i ) : SV_Target
 		{
 			float4 vTexel = tex2D( _MainTex, i.uv ).rgba;
-			float4 vColor = vTexel.rgba * _TintColor.rgba * i.color.rgba;
+			float4 vColor = vTexel.rgba * _TintColor.rgba;
+			//float4 vColor = vTexel.rgba * _TintColor.rgba * i.color.rgba;
 			vColor.rgba = saturate( 2.0 * vColor.rgba );
 			float flAlpha = vColor.a;
 
@@ -81,7 +82,8 @@ Shader "Valve/VR/HighlightCustom"
 		float4 SeeThruPS( VertexOutput i ) : SV_Target
 		{
 			float4 vTexel = tex2D( _MainTex, i.uv ).rgba;
-			float4 vColor = vTexel.rgba * _TintColor.rgba * i.color.rgba * _SeeThru;
+			//float4 vColor = vTexel.rgba * _TintColor.rgba * i.color.rgba * _SeeThru;
+			float4 vColor = vTexel.rgba * _TintColor.rgba;
 			vColor.rgba = saturate( 2.0 * vColor.rgba );
 			float flAlpha = vColor.a;
 
