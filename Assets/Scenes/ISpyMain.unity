@@ -30780,6 +30780,8 @@ MonoBehaviour:
   - {fileID: 1822428743}
   - {fileID: 965498553}
   - {fileID: 1702040279}
+  growDuration: 0.5
+  maxAnimationDeltaTime: 0.05
 --- !u!114 &807142191
 MonoBehaviour:
   m_ObjectHideFlags: 0
